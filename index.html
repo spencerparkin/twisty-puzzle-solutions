@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Twisty Puzzle Solutions</h1>
+		<p>By Spencer T. Parkin</p>
+		<h2>Introduction & Conventions</h2>
+		<p>
+		This web-site documents original and well-known solutions to various twisty puzzles that I've found and learned over the years.  Owning dozens of such puzzles, documenting them all is an overwhelming task.  So what I've decided to do here is only give a high-level overview of how I solve each puzzle, and then only go into greater detail where needed, which usually means the end-game of the puzzle, special cases, and parity cases.  Also, I don't take the time to diagram or illustrate in any way the net effect of any sequence.  This may seem cheap, but the sequence is more important than the diagram as it can be used to discover its effects for yourself.
+		</p>
+		<p>
+		For all puzzles that are cubes in the solved state, the following diagram illustrates the naming conventions I will use.
+		</p>
+		<img src="images/cube_conventions_diagram.png"/>
+		<p>
+		With this diagram in mind, following are my notational conventions.
+		<ol>
+			<li>The capital letters refer to the <code>L</code>eft, <code>R</code>ight, <code>U</code>ppward, <code>D</code>ownward, <code>F</code>orward, and <code>B</code>ackward faces.  The axis referred to by any one of these letters is an outward normal to the associated face.  The rotation referred to by any one of these letters is clock-wise about the said normal when it is viewed as pointing toward you.</li>
+			<li>Unordered pairs of these capital letters refer to edges of the cube (e.g., <code>LU=UL</code> and <code>RF=FR</code>.)  These, of course, should not be confused with rotation sequences (e.g., <code>LU != L,U</code>.)  Also note that the pairs must refer to adjacent faces (e.g., <code>FB</code> makes no sense.)  These pairs refer to clock-wise rotations about the associated axes.  To cut back on letters, conventions for a particular puzzle may be used (e.g., <code>l=UL; r=UR; f=UF; b=UB</code>.)</li>
+			<li>Unordered triples of these capital ltters refer to corners of the cube (e.g., <code>UFR=FRU</code>.)  These too refer to clock-wise rotations about the associated axes.</li>
+			<li>An <code>i</code> appended to a letter, pair or triple (e.g., <code>Ri</code> or <code>FRUi</code>) will denote a counter-clock-wise rotation.  The amount of rotation is usually the least amount necessary to preserve the shape of the puzzle unless otherwise stated.</li>
+			<li>Letters not to be confused with those found in the diagram will denote sequences of rotations, or sequences of sequences, or a mix of the two.  For example, <code>A=B,R</code> together with <code>B=L,U</code> gives us <code>A=L,U,R</code> by substition.</li>
+			<li>Square brackets are used to denote repatition of sequences (e.g., <code>2[A,B]=A,B,A,B</code>).  The square brackets may be dropped for sequences of unit length (e.g., <code>2[A]=2A=A,A</code>).</li>
+			<li>Curly brackets are used to denote the scaling of sequences (e.g., <code>2{A,B}=2A,2B</code>).  The curly brackets may be dropped for sequences of unit length (e.g., <code>2{A}=2A=A,A</code>).</li>
+			<li>Parenthesis may be used to offset sub-sequences for readability purposes, or for the convenience of recognizing inverses (e.g., <code>(A,B)i,C=Bi,Ai,C</code>.)</li>  The <code>i</code> may also be appended to square and curly braces.
+			<li>Square and curly brackets, as well as parenthesis, may be nested to any depth (e.g., <code>2[A,3{B,C}i]=A,Ci,Ci,Ci,Bi,Bi,Bi,A,Ci,Ci,Ci,Bi,Bi,Bi</code>.)</li>
+			<li>Whole rotations of the puzzle may appear in a sequence (e.g., <code>R,|U|,R=R,B</code>.)  Here, the <code>|U|</code> means rotate the entire puzzle clock-wise with respect to the axis associated with the <code>U</code> face.  Since the face symbols don't mean anything without an orientation of the puzzle (i.e., they're inherently contextual), a rotation of the entire puzzle changes the meaning of the symbols.  In the example just given, <code>R</code> became <code>B</code>.</li>
+		</ol>
+		Still further conventions may be established to meet the specific needs of a given puzzle.
+		</p>
+		<h2>Index of Puzzles</h2>
+		<p>
+		Finally, here are the puzzles that I have thus far to-date documented, or plan to document.
+		<ul>
+			<li><a href="puzzle_rubiks_cube.html">Rubik's Cube</a> -- The ultra-classic of them all, everyone should be familiar with and know how to solve this iconic puzzle.</li>
+			<li><a href="puzzle_6x6x6_cube.html">6x6x6 Cube</a> -- One of the higher-order varients of the Rubik's Cube.</li>
+			<li>Square 1 -- This is probably the most classic of the shape-shifting twisty puzzles.</li>
+			<li>Curvy Copter -- This edge-turner has a surprising kind of move that I've never seen in any other kind of twisty puzzle.</li>
+			<li>Curvy Copter 3 -- A deeper cut to the original curvy-copter makes for an even funner solve.</li>
+			<li>Wormhole 2 -- This one requires an inward and outer solve.</li>
+			<li>Bagua -- A wonderfully difficult and time-consume puzzle that massively shape-shifts and bandages.</li>
+		</ul>
+		</p>
+		<h2>Twisty Puzzle Theory</h2>
+		<p>
+		No twisty puzzle page would be complete without addressing, in at least some degree, some twisty puzzle theory; group theory, to be precise.  Permutation groups can be used to model many twisty puzzles, even if it's not immediately obvious how this can be done.  (e.g., it is not immediately obvious how one can come up with the generates for the Mixup Cube, but it can be done.)  Still other puzzles such as the Square 1 may fall outside of group theory as they require a slightly different mathematical structure, such as perhaps a groupoid, to be fully realized mathematically.  If one, however, were to consider all mutations of the puzzle that preserve its present shape, or that preserve the cube shape, then group theory becomes, once again, immediately applicable and useful in an analysis of the Square 1.
+		</p>
+		<p>
+		All that said, we must start with the common theme of all twisty puzzles in terms of group theory, which is to state the problem every such puzzle presents the puzzler in terms of that theory, which is to find, given any elements of the group representing the puzzle, a factorization of that element in terms of a given set of generators of that group.  The generates we're given for the Rubik's cube, for example, are the 6 faces.  Interestingly, it can be shown that if one of these faces were locked, the remaining 5 would still generate the entire group.
+		</p>
+		<p>
+		An interesting group-theoretic strategy to solving twisty puzzles is the idea of working within a homomorphic image of the puzzle.  Notice that all sequences of the Rubik's cube that change cubie orientation, but not position, forms a normal subgroup.  Factoring this subgroup out, we get a group representing all the ways that the cubies can be moved across the cube, regardless of orientation.  When you solve cubie positions first, then orientation, you're first working in a homomorphic image, and then in a normal subgroup, of the overall group.
+		</p>
+		<p>
+		Next comes a treatment of conjugates and commutators.  The group elements can be said to act on the stickers of a twisty puzzle, and
+		it can be shown that the total action of a commutator is proportional to how much the pair of elements taken in the commutator product commute
+		with one another.  At the end-game of a solve, the most useful commutators are those made between almost that don't, but almost commute, as these
+		will act as little on the nearly-solved puzzle as possible.  Using set theory, it is not hard to show that the minimum action of the two given group elements is always less than the action of a commutator of those elements.
+		</p>
+		<p>
+		While commutators narrow action, conjugates direction the action to a desired area of the puzzle.  In common cubist parlance, this is achieved
+		through the use of a setup move.  Once setup, a useful move sequences is performed, and then the setup move is undone.  The net effect is simply a shift or translation of the action of the said useful sequence to some other area of the puzzle.  With practice, long setup moves become easier to unwind.
+		</p>
+		<h2>Me & Twisty Puzzles</h2>
+		<p>
+		I became obsessed with twisty puzzles after finally getting around to investigating the Rubik's cube, which had been on my list of things to do for many years.  Had I known how fun it was, I would have done so much sooner.  Ironically, I had written software that simulated a Rubik's cube long before ever knowing how to solve one.  I then began collecting all sorts of twisty puzzles.  Having been spoon-fed a solution to the Rubik's cube, I insisted on finding my own solutions to each new twisty puzzle I decided to buy.  Only then would I go compare that with the way other people got the puzzle solved.  They're all just permutation groups, sure, but there is still so much variety in stratagy and thinking that is stimulated by various twisty puzzles that I continue to enjoy them.  I have since written generalized software that can simulate a variety of twisty puzzles.
+		</p>
+	</body>
+</html>

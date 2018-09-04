@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: 6x6x6 Rubik's Cube</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>The 6x6x6 Rubik's Cube</h1>
+		<p>
+		This discussion generalizes to any <code>NxNxN</code>, and in doing so, I don't bother to give any sequences.  That withstanding, I still believe this is useful information.  Also, I would say that the puzzle is most interesting when <code>N</code> is even, because without center edge cubies, parity is harder to avoid.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		I like to solve the faces first, ignoring the edges and corners.  The crux is the last two faces.  Use a simple and trivial commutator to tri-cycle center cubies between these two faces.  Don't worry about the centers all being solved correctly relative to one another, only that they are all one solid color.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		Now put the edges together.  A common strategy is to align an edge, then swap it out for an unsolved edge, then undo the damage made to the centers.
+		The last few edges are the crux.  There is a simple commutator that will permutate edge cubies across two edges.  Note that the last edge may not solve completely due to parity.  We'll address this later.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		Now get the centers solved relative to one another.  It's interesting to see how doing so preserves the edges.  Split the cube in half a quater turn, turn a face 180-degrees across the split, unsplit, and turn the face again.  This simple commutator swaps whole face centers without disturbing edges.  Use the corner cubies to make sure you have the whole centers in the right places relative to one another.
+		</p>
+		<h3>Step 4</h3>
+		<p>
+		Now resolve parity the may have prevented the edges from solving.  Once done, you may still have the same parity in play, but be unable to recognize it until you try solving the remainder of the puzzle as a 3x3x3 in step 5.  Anyhow, it's interesting to me to note that while there does exist a big long complicated sequence you can memorize to resolve the edge parity, it has an otherwise simpler, even if longer solution that also sheds light on the nature of the parity.  By simply doing one quarter turn of the appropriate slice, and then resolving the center cubies using commutators only, you will put the cube in a state where the edge cubies can be solved with tri-cycles when before they couldn't.
+		</p>
+		<h3>Step 5</h3>
+		<p>
+		Finally, solve it as a 3x3x3.  If doing layer-solve method, there are two parities that can arrise in the last layer.  The first is as already mentioned in step 4.  The second manifests itself as a pair of corners that must be swapped.  To resolve it, find a move unique to <code>NxNxN</code> cubes of even order that swaps a pair of edges.
+		</p>
+		<h2>Concluding Remarks</h2>
+		<p>
+		Some people mistakenly believe that an <code>NxNxN</code>'s difficulty is proportional to <code>N</code>, but this is only so in terms of how long it takes to solve the cube and how difficult it is to turn the slices.  There really is no real difference to me between, say, an <code>8x8x8</code> and an <code>800x800x800</code>.  If you know how to solve one, then you know how to solve the other.
+		</p>
+	</body>
+</html>

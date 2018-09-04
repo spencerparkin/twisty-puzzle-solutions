@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Rubik's Cube</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>The Rubik's Cube</h1>
+		<p>
+		The Rubik's Cube has so many well-known solutions that I thought it would be fun here to document a rediculous but (to me) interesting solution that operates under the constraint that one is only allowed to perform a basic commutator across adjacent faces rather than being able to rotate any face at any time.  To be precise, the solution sequence must be of the form <code>A,B,C,D,...</code> where each of these is a commutator formed from any two faces of the cube.  The only exception to this rule, given in step 1 below, will illustrate nicely the concept of parity that can be found in many twisty puzzles.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Begin by solving the edge cubie positions.  These are tri-cycled by sequences of the form <code>A,B,Ai,Bi</code>, where <code>A</code> and <code>B</code> are any two adjacent faces of the cube.  If you find that the last two edge cubies must be swapped, you have parity.  Solving this parity requires the only departure we need make from the constraint given above.  After rotate any desired face a quater turn, it then becomes possible for this step to be completed.  Of course, choosing the right face will minimize the amount of work needed to complete the step.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		Now solve the edge cubie orientations.  You can do this with <code>X,Y,Xi,Yi</code> where <code>X=Ri,F,R,Fi</code> and <code>Y=|RUF|i</code>.  If you were careful enough in step 1, this sequence will need only be applied a few times.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		Solve corner cubie positions.  Notice that pairs of swaps are performed by sequences of the form <code>3[A,B,Ai,Bi]</code> where <code>A</code> and <code>B</code> are any two adjacent faces.
+		</p>
+		<h3>Step 4</h3>
+		<p>
+		Solve corner cubie orientations.  Use <code>3[3X,Y]</code> to rotate 3 corners at a time on a single face.  This is time-consuming, yes, but serves to illustrate that we can get the cube solved under the constraints outlined above.
+		</p>
+		<h2>Concluding Remarks</h2>
+		<p>
+		Though tedious, I believe this is an elegant solution to the Rubik's Cube in its consiceness and simplicity.  It might be interesting to see if there is a corner's-first method that operates under the same constraint.
+		</p>
+	</body>
+</html>
