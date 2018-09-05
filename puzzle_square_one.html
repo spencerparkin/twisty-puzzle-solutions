@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Square 1</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Square 1</h1>
+		<p>
+		The different shapes this puzzle can take on make it really fun.  Many of them have been given clever names.
+		</p>
+		<p>
+		The solution I give here is not very efficient, but it works.  Notice that we will only need the <code>R</code>, <code>U</code> and <code>D</code> symbols.  The <code>R</code> symbol will always be a pi-radians rotation.  The amount of rotation for <code>U</code> or <code>D</code> will always be the minimum amount needed to prevent bandaging <code>R</code>, which will very depending on the state of the puzzle.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Get it back into cube shape.  Try to get all the small pie wedges sandwitched together on one side.  From here, split the pie wedges in half, then in half again, the again on just one side while preserving them on the other, then there is just one last split giving you the cube shape up to the middle slice alignment which you can ignore until the last step.
+		</p>
+		<p>
+		The crux is getting all those pie wedges sandwitched together on one side.  With practice, you can recognize many different cases to get there faster.
+		</p>
+		<h3>Step 2</h2>
+		<p>
+		Now get all the white diamond edges on one side.  Consequently, this will also put all yellow diamond wedges on the other.
+		</p>
+		<h3>Step 3</h2>
+		<p>
+		Here we position the diamond wedges correctly relative to one another on both the top and the bottom.  Igoring the bottom, use <code>A=2[R,D,R,Di],R</code> to swap a pair of diamond wedges on the top layer.  Once solved, flip the puzzle over and focus on the other diamond wedges on the other side.  Since <code>A</code> also swaps a pair of diamond wedges on the bottom, you must apply it an even number of times to solve the diamond wedges on the final layer.  This can always be done.
+		</p>
+		<h3>Step 4</h2>
+		<p>
+		We now permute the pie wedges.  I use <code>2[R,U],R,D,R,Di,R,U,2[R,Ui],R</code>.  Use a simple setup move <code>D,R,Di</code> to permute pie wedges across a single layer.  If you find two remaining pie wedges that need to be swapped, you have parity!  To solve this, use the pie wedge quad-cycle <code>(B,(D),Bi),U,R,Ui,Di,R,Ui</code> where <code>B=R,U,D,R,Ui,Di,R,U,D,R</code>.  Interestingly, it's the <code>D</code> in parenthesis in this sequence that is the real parity fix.
+		</p>
+		<h3>Step 5</h3>
+		<p>
+		Finally, solve the middle layer.  Use <code>2[R,2U],R</code> and <code>R,2U,2D,R</code> to get this done.
+		</p>
+	</body>
+</html>

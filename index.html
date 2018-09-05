@@ -8,7 +8,7 @@
 		<p>By Spencer T. Parkin</p>
 		<h2>Introduction & Conventions</h2>
 		<p>
-		This web-site documents original and well-known solutions to various twisty puzzles that I've found and learned over the years.  Owning dozens of such puzzles, documenting them all is an overwhelming task.  So what I've decided to do here is only give a high-level overview of how I solve each puzzle, and then only go into greater detail where needed, which usually means the end-game of the puzzle, special cases, and parity cases.  Also, I don't take the time to diagram or illustrate in any way the net effect of any sequence.  This may seem cheap, but the sequence is more important than the diagram as it can be used to discover its effects for yourself.
+		This web-site documents original and well-known solutions to various twisty puzzles that I've found and learned over the years.  Owning dozens of such puzzles, documenting them all is an overwhelming task.  So what I've decided to do here is only give a high-level overview of how I solve each puzzle, and then only go into greater detail where needed, which usually means the end-game of the puzzle, special cases, and parity cases.  Also, I don't always take time to diagram or illustrate the net effect of a sequence.  This may seem cheap, but the sequence is more important than a diagram as the sequence can be used to discover its effects for yourself.  I look on this documentation as notes I can use to get any of these puzzles solved again if ever I forgot how to solve one of them.  Take it for whatever it's worth.
 		</p>
 		<p>
 		For all puzzles that are cubes in the solved state, the following diagram illustrates the naming conventions I will use.
@@ -17,18 +17,18 @@
 		<p>
 		With this diagram in mind, following are my notational conventions.
 		<ol>
-			<li>The capital letters refer to the <code>L</code>eft, <code>R</code>ight, <code>U</code>ppward, <code>D</code>ownward, <code>F</code>orward, and <code>B</code>ackward faces.  The axis referred to by any one of these letters is an outward normal to the associated face.  The rotation referred to by any one of these letters is clock-wise about the said normal when it is viewed as pointing toward you.</li>
+			<li>The capital letters refer to the <code>L</code>eft, <code>R</code>ight, <code>U</code>ppward, <code>D</code>ownward, <code>F</code>orward, and <code>B</code>ackward faces which, of course, depend on how you're holding the cube in your hands.  The axis referred to by any one of these letters is an outward normal to the associated face.  The rotation referred to by any one of these letters is clock-wise about the said normal when it is viewed as pointing toward you.</li>
 			<li>Unordered pairs of these capital letters refer to edges of the cube (e.g., <code>LU=UL</code> and <code>RF=FR</code>.)  These, of course, should not be confused with rotation sequences (e.g., <code>LU != L,U</code>.)  Also note that the pairs must refer to adjacent faces (e.g., <code>FB</code> makes no sense.)  These pairs refer to clock-wise rotations about the associated axes.  To cut back on letters, conventions for a particular puzzle may be used (e.g., <code>l=UL; r=UR; f=UF; b=UB</code>.)</li>
-			<li>Unordered triples of these capital ltters refer to corners of the cube (e.g., <code>UFR=FRU</code>.)  These too refer to clock-wise rotations about the associated axes.</li>
+			<li>Unordered triples of these capital letters refer to corners of the cube (e.g., <code>UFR=FRU</code>.)  These too refer to clock-wise rotations about the associated axes.</li>
 			<li>An <code>i</code> appended to a letter, pair or triple (e.g., <code>Ri</code> or <code>FRUi</code>) will denote a counter-clock-wise rotation.  The amount of rotation is usually the least amount necessary to preserve the shape of the puzzle unless otherwise stated.</li>
-			<li>Letters not to be confused with those found in the diagram will denote sequences of rotations, or sequences of sequences, or a mix of the two.  For example, <code>A=B,R</code> together with <code>B=L,U</code> gives us <code>A=L,U,R</code> by substition.</li>
+			<li>Letters not to be confused with those found in the diagram will denote sequences of rotations, sequences of sequences, or a mix of the two.  For example, <code>A=B,R</code> together with <code>B=L,U</code> gives us <code>A=L,U,R</code> by substition.</li>
 			<li>Square brackets are used to denote repatition of sequences (e.g., <code>2[A,B]=A,B,A,B</code>).  The square brackets may be dropped for sequences of unit length (e.g., <code>2[A]=2A=A,A</code>).</li>
 			<li>Curly brackets are used to denote the scaling of sequences (e.g., <code>2{A,B}=2A,2B</code>).  The curly brackets may be dropped for sequences of unit length (e.g., <code>2{A}=2A=A,A</code>).</li>
 			<li>Parenthesis may be used to offset sub-sequences for readability purposes, or for the convenience of recognizing inverses (e.g., <code>(A,B)i,C=Bi,Ai,C</code>.)</li>  The <code>i</code> may also be appended to square and curly braces.
 			<li>Square and curly brackets, as well as parenthesis, may be nested to any depth (e.g., <code>2[A,3{B,C}i]=A,Ci,Ci,Ci,Bi,Bi,Bi,A,Ci,Ci,Ci,Bi,Bi,Bi</code>.)</li>
 			<li>Whole rotations of the puzzle may appear in a sequence (e.g., <code>R,|U|,R=R,B</code>.)  Here, the <code>|U|</code> means rotate the entire puzzle clock-wise with respect to the axis associated with the <code>U</code> face.  Since the face symbols don't mean anything without an orientation of the puzzle (i.e., they're inherently contextual), a rotation of the entire puzzle changes the meaning of the symbols.  In the example just given, <code>R</code> became <code>B</code>.</li>
 		</ol>
-		Still further conventions may be established to meet the specific needs of a given puzzle.
+		Still further conventions may be established to meet the specific needs of a given puzzle.  For puzzles that are not cubes, different letters will be assigned for the applicable axes.
 		</p>
 		<h2>Index of Puzzles</h2>
 		<p>
@@ -36,11 +36,12 @@
 		<ul>
 			<li><a href="puzzle_rubiks_cube.html">Rubik's Cube</a> -- The ultra-classic of them all, everyone should be familiar with and know how to solve this iconic puzzle.</li>
 			<li><a href="puzzle_6x6x6_cube.html">6x6x6 Cube</a> -- One of the higher-order varients of the Rubik's Cube.</li>
-			<li>Square 1 -- This is probably the most classic of the shape-shifting twisty puzzles.</li>
+			<li><a href="puzzle_square_one.html">Square 1</a> -- This is probably the most classic of the shape-shifting twisty puzzles.</li>
 			<li>Curvy Copter -- This edge-turner has a surprising kind of move that I've never seen in any other kind of twisty puzzle.</li>
 			<li>Curvy Copter 3 -- A deeper cut to the original curvy-copter makes for an even funner solve.</li>
 			<li>Wormhole 2 -- This one requires an inward and outer solve.</li>
 			<li>Bagua -- A wonderfully difficult and time-consume puzzle that massively shape-shifts and bandages.</li>
+			<li><a href="puzzle_latch_cube.html">Latch Cube</a> -- Though I've solved this cube many times, it always give me trouble!</li>
 		</ul>
 		</p>
 		<h2>Twisty Puzzle Theory</h2>
@@ -65,7 +66,10 @@
 		</p>
 		<h2>Me & Twisty Puzzles</h2>
 		<p>
-		I became obsessed with twisty puzzles after finally getting around to investigating the Rubik's cube, which had been on my list of things to do for many years.  Had I known how fun it was, I would have done so much sooner.  Ironically, I had written software that simulated a Rubik's cube long before ever knowing how to solve one.  I then began collecting all sorts of twisty puzzles.  Having been spoon-fed a solution to the Rubik's cube, I insisted on finding my own solutions to each new twisty puzzle I decided to buy.  Only then would I go compare that with the way other people got the puzzle solved.  They're all just permutation groups, sure, but there is still so much variety in stratagy and thinking that is stimulated by various twisty puzzles that I continue to enjoy them.  I have since written generalized software that can simulate a variety of twisty puzzles.
+		I became obsessed with twisty puzzles after finally getting around to investigating the Rubik's cube, which had been on my list of things to do for many years.  Had I known how fun it was, I would have done so much sooner.  Ironically, I had written software that simulated a Rubik's cube long before ever knowing how to solve one.  I then began collecting all sorts of twisty puzzles.  Having been spoon-fed a solution to the Rubik's cube, I insisted on finding my own solutions to each new twisty puzzle I decided to buy.  Only then would I go compare my solution with the way other people got the puzzle solved.  My final solution would then take the best of what other people did and what I could come up with on my own.
+		</p>
+		<p>
+		They're all just permutation groups, sure, but there is still so much variety in stratagy and thinking that is stimulated by various twisty puzzles that I continue to enjoy them.  I have since written generalized, OpenGL-based software that can simulate a variety of 3-dimensional twisty puzzles.  I have also written a 2-dimensional twisty puzzle WebGL-based web-app that can be found <a href="https://sym-grp-puz.herokuapp.com/">here</a>.
 		</p>
 	</body>
 </html>

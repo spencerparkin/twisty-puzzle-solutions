@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Rex Cube</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Rex Cube</h1>
+		<p>
+		The method I show here is an alternative to a simpler and easier method known as the peddle-flip method.
+		In the steps that follow, we are going to let <code>A=LFU</code>, <code>B=RFU</code>, <code>C=RBU</code> and <code>D=LBU</code>.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Solve the edges.  Start with one side of the cube, then do the other.  A simple tri-cycle of the edges finishes the final layer.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		From here on we only use sequences of the form <code>X,Y,Xi,Yi</code> to tri-cycle slivers about the cube while preserving the solved edges.  Solving the puzzle from here on means mastering these tri-cycles in all variants, forward and backards.
+		</p>
+		<p>
+		In this step we temporarily position the centers.  This is just to see if we have parity.  If there becomes two remaining centers that need to be swapped, use <code>X,2|R|,X</code> with <code>X=2[C,Di],C</code>.  Then, though not necessary, you can temporarily solve the center positions again to see that they solve without a problem.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		I now like to solve all the spike-pairs.  There are 2 sets of spike-pairs, each having 6 pairs, 1 per face.  There are 2 spike-pairs per face, one in each set.  Make a setup move to complete a pair (by matching 2 spikes of the same color), then tri-cycle an unsolved pair into the position of the solved pair, therey-by kicking out the solved pair into a safe location, then undo the setup move.  This strategy works for a single set of spike-pairs up until the last 2 or 3 remaining pairs.  If there are 2 remaining pairs, use a similar strategy to turn it into 3 remaining unsolved pairs.  If there are 3 remaining pairs, solve them all simultaneously.  After positioning the remaining pairs strategically, make a setup move, then a tri-cycle, just as you've been doing all along, so that undoing the setup-move completes the step for a single spike-pair set.  It's really the same basic sequence strategy in all cases.  Solve both spike-pair sets.
+		</p>
+		<h3>Step 4</h3>
+		<p>
+		Easily solve 3 of the 6 sides using sliver tri-cycles.  The next step will address the reamining 3 sides.  I always make the 3 remaining sides a strip (i.e., not pair-wise adjacent.)
+		</p>
+		<h3>Step 5</h3>
+		<p>
+		The key move here is <code>Bi,2|R|,Ci,Ai,C,A,2|R|,2B,|Ri|,B,D,Bi,Di,|R|,2Bi,2|R|,C,A,Ci,Ai,2|R|,B,|Ri|,B,D,Bi,Di</code> and a varient of this for the other spike-pair set.  That's a long sequence, but it's not hard to memorize the basic idea.  What we're essentially doing is turning 3 solved spike-pairs into 3 unsolved spike-pairs, then resolving them in such a way that when we try positioning them again in the final 3 faces, they succeed in going into their proper places next to the edges.
+		</p>
+		<h3>Step 6</h3>
+		<p>
+		Once all the spikes are positioned properly, all that may remain is to tri-cycle 3 centers.  The center tri-cycle is given by <code>2[C,A,Ci,Ai,(D,B,Di,Bi),C,Ai,Ci,A],D,B,Di,Bi</code>.
+		</p>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Bagua</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Bagua</h1>
+		<p>
+		This puzzle is not for everyone, because it is quite difficult and time consuming.  I enjoy sitting down and solving it all at once in about an hour, or doing it about 5 minutes at a time over a few days while taking breaks at work or waiting for a process to complete, etc.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Up to the sliver peices, get it back into cube shape.  In other words, it would be a perfect cube save some sliver peices may be gently poking out the sides of the cube.  This just takes a lot of time and patience depending on how bandaged the puzzle has become.  Think about the Rubik's cube sequences you already know and how they can help.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		The crux of the puzzle is to solve the last two edge blocks.  All sequences described here assume that these last two edge blocks are in the top layer opposite one another; one in the front, the other in the back.
+		</p>
+		<p>
+		Lastly, we must permute the kite pieces into place across the last two edge blocks.  To do this, we'll need 3 sequences <code>A</code>, <code>B</code> and <code>C</code> that can be used to create the kite tri-cycle <code>D=2[2[A,B],C]</code>.
+		The sequences are <code>A=2{Ri,2|F|,Fi,Ui,F,U,R,U,Ri,2|Fi|,F}</code>, <code>B=2{Ri,Li,Fi,Bi},U,2{Ri,Li},4D,2{R,L},Ui,2{F,B,R,L}</code> and <code>C=R,B,4U,Ri,Bi</code> or <code>C=Ri,Bi,4U,R,B</code>.  This is quite an involved sequence, but it isn't
+		too hard to remember.  I call <code>A</code> the edge flip, and it can be done in any way that simply flips the edge block over without the disturbing the other edge block; I call <code>B</code> the edge center swap; and <code>C</code> a clock-split or counter-clock-split.  The two varients of <code>C</code>, along with knowing <code>D</code> forward and
+		backards gives you four different kite tri-cycles across the remaining two edge blocks.
+		</p>
+		<p>
+		While getting the kites positioned, it will become clear why making sure that the final two edge blocks share a common color becomes an advantage if it looks as if the final two kites needs to be swapped.
+		</p>
+	</body>
+</html>

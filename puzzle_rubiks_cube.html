@@ -24,9 +24,25 @@
 		<p>
 		Solve corner cubie orientations.  Use <code>3[3X,Y]</code> to rotate 3 corners at a time on a single face.  This is time-consuming, yes, but serves to illustrate that we can get the cube solved under the constraints outlined above.
 		</p>
-		<h2>Concluding Remarks</h2>
+		<h2>Other Notable Methods</h2>
 		<p>
-		Though tedious, I believe this is an elegant solution to the Rubik's Cube in its consiceness and simplicity.  It might be interesting to see if there is a corner's-first method that operates under the same constraint.
+		I should at least mention a few other notable solution methods of the Rubik's cube.
+		</p>
+		<p>
+		Layer method comes to mind first.  There are essentially three steps: first layer, second layer, third.  The last layer has been studied theroughly by speed cubists and can be broken down into two sub-steps: OLL and PLL.  The first two steps are often combined into one called F2L.
+		</p>
+		<p>
+		Next is key-hole method.  Corners are solved first, then three of the four cubies on each of two opposite sides are solved leaving a notch or key-hole on both sides.  The last two unsolved edges across both of those sides are then solved simultaneously.  The last step is to position and orient the remaining edge cubies about the middle slice.
+		</p>
+		<h2>Fun Patterns</h2>
+		<p>
+		For any face <code>A</code>, letting <code>A'</code> denote the adjacent middle slice, we have <code>R'=L'i</code>, <code>U'=D'i</code> and <code>F'=B'i</code>.  Super-flip is then given by <code>3[3[R',Ui],|R|,|U|]</code>.  This flips all the edge cubies.
+		</p>
+		<p>
+		The snake pattern begins with <code>R,2F'i,Li,2U,R',2U,R'i,2|R|,R',2U,R'i,2U</code>.  Now just flip two edges on opposite sides of the cube to complete the pattern.
+		</p>
+		<p>
+		Cube-in-a-cube is easy to get on an <code>NxNxN</code> as it easily generalizes from what we do to get it on the <code>3x3x3</code>.  Start with <code>4[R',U'i]</code> to do a pair of center tri-cycles.  Now after a setup move, tri-cycle the needed edge cubies on one corner, then the opposite corner, accounting for proper orientation.  The sequence used is <code>A,B,Ai,Bi</code> where <code>A=R,U,Ri,Ui</code> and <code>B=Li,Ui,L,U</code>.  Now twist corners on opposite sides of the cube.  A setup move is useful for this.
 		</p>
 	</body>
 </html>
