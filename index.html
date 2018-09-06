@@ -18,7 +18,7 @@
 		With this diagram in mind, following are my notational conventions.
 		<ol>
 			<li>The capital letters refer to the <code>L</code>eft, <code>R</code>ight, <code>U</code>ppward, <code>D</code>ownward, <code>F</code>orward, and <code>B</code>ackward faces which, of course, depend on how you're holding the cube in your hands.  The axis referred to by any one of these letters is an outward normal to the associated face.  The rotation referred to by any one of these letters is clock-wise about the said normal when it is viewed as pointing toward you.</li>
-			<li>Unordered pairs of these capital letters refer to edges of the cube (e.g., <code>LU=UL</code> and <code>RF=FR</code>.)  These, of course, should not be confused with rotation sequences (e.g., <code>LU != L,U</code>.)  Also note that the pairs must refer to adjacent faces (e.g., <code>FB</code> makes no sense.)  These pairs refer to clock-wise rotations about the associated axes.  To cut back on letters, conventions for a particular puzzle may be used (e.g., <code>l=UL; r=UR; f=UF; b=UB</code>.)</li>
+			<li>Unordered pairs of these capital letters refer to edges of the cube (e.g., <code>LU=UL</code> and <code>RF=FR</code>.)  These, of course, should not be confused with rotation sequences (e.g., <code>LU != L,U</code>.)  Also note that the pairs must refer to adjacent faces (e.g., <code>FB</code> makes no sense.)  These pairs refer to clock-wise rotations about the associated axes.  To cut back on letters, conventions for a particular puzzle may be used (e.g., <code>A=UL; B=UR; C=UF; D=UB</code>.)</li>
 			<li>Unordered triples of these capital letters refer to corners of the cube (e.g., <code>UFR=FRU</code>.)  These too refer to clock-wise rotations about the associated axes.</li>
 			<li>An <code>i</code> appended to a letter, pair or triple (e.g., <code>Ri</code> or <code>FRUi</code>) will denote a counter-clock-wise rotation.  The amount of rotation is usually the least amount necessary to preserve the shape of the puzzle unless otherwise stated.</li>
 			<li>Letters not to be confused with those found in the diagram will denote sequences of rotations, sequences of sequences, or a mix of the two.  For example, <code>A=B,R</code> together with <code>B=L,U</code> gives us <code>A=L,U,R</code> by substition.</li>
@@ -56,6 +56,7 @@
 		<p>
 		An interesting group-theoretic strategy to solving twisty puzzles is the idea of working within a homomorphic image of the puzzle.  Notice that all sequences of the Rubik's cube that change cubie orientation, but not position, forms a normal subgroup.  Factoring this subgroup out, we get a group representing all the ways that the cubies can be moved across the cube, regardless of orientation.  When you solve cubie positions first, then orientation, you're first working in a homomorphic image, and then in a normal subgroup, of the overall group.
 		</p>
+		<h3>Commutators & Conjugates</h3>
 		<p>
 		Next comes a treatment of conjugates and commutators.  The group elements can be said to act on the stickers of a twisty puzzle, and
 		it can be shown that the total action of a commutator is proportional to how much the pair of elements taken in the commutator product commute
@@ -65,6 +66,10 @@
 		<p>
 		While commutators narrow action, conjugates direction the action to a desired area of the puzzle.  In common cubist parlance, this is achieved
 		through the use of a setup move.  Once setup, a useful move sequences is performed, and then the setup move is undone.  The net effect is simply a shift or translation of the action of the said useful sequence to some other area of the puzzle.  With practice, long setup moves become easier to unwind.
+		</p>
+		<h3>Parity</h3>
+		<p>
+		Now what about parity?  What is it?  I believe the nature of parity, in terms of group theory, may be described in terms of even and odd permutations.  (The parity of a permutation is the parity of the number of transpositions it can be decomposed into; which, it has been shown, is consistent across all ways the permutation can be factored as such.)  Now, in any group of a permutations, the even permutations of that group form a subgroup.  If the state of your puzzle is an odd permutation in that group, then as many even permutations you apply to the puzzle, and as close as it may get to a solved state, it will never get solved, because you're jumping around in a coset that does not contain the identity element.  The trick, then, to solving the parity is to apply any odd permutation, and then continue on with only even permutations.
 		</p>
 		<h2>Me & Twisty Puzzles</h2>
 		<p>
