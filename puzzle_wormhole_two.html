@@ -4,17 +4,38 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
+		<center><img src="images/wormhole_2.jpg"></center>
 		<h1>Wormhole II</h1>
 		<p>
-		
+		In the discussion to follow, we are going to let <code>M</code> indicate a clock-wise rotation of a middle layer.  Exactly what this means will become clear from its usage.
 		</p>
 		<h3>Step 1</h3>
 		<p>
-		Get it back into cube shape.
+		Get all of the non-windowed edges into a single middle layer.
 		</p>
 		<h3>Step 2</h3>
 		<p>
-		<code>Ui,R,U,2R,F,R,2F,U,F,Ui</code>
+		Now look at the profile of the puzzle with the middle layer wrapping the axis pointed at your face.  What you'll see is zero or more edge faces poking out the side of the cube.  We don't yet care about any edges poking out the side of the cube.  To flatten these edge faces, we simply apply the sequence <code>(Li,Ui,L),(1.5)Mi,(Li,U,Li),(0.5)M,(R,U,Ri)</code>, and its symmetric varient, to a chunk into the top layer, then swap it with some other chunk in the middle layer, then bring that chunk in the top layer back into the middle layer.  The net effect is to chunks across the middle layer.  With practice, it's not hard to see how this can be done to flatten the edge faces, ignoring centers and edges.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		Now get the puzzle back into cube shape.  There is only one case that's a bit tricky.  It's the case when two edges lie at half or three quaters of 90 degrees from one another.  I get them at 90 degrees from one another, then 180, then slot them in with their edge faces.  It's not too hard to figure out.
+		</p>
+		<h3>Step 4</h3>
+		<p>
+		With the puzzle back in cube shape, solve the inner core using all the steps in my <a href="puzzle_fused_cube.html">fused cube solution</a>.  The remainder of our solve will employ only sequences that preserve the inner core and the corner cubies.
+		</p>
+		<h3>Step 5</h3>
+		<p>
+		Repeat step 1 using key-hole method moves, then get all of the centers in the right relative locations.  I use <code>(0.5)Mi,2F,(0.5)M</code>.
+		</p>
+		<h3>Step 6</h3>
+		<p>
+		Use the key-hole method to solve the edges, windowed or non-windowed.  If the last two edge can't be solved (i.e., need to be swapped), then you have parity!  To fix it, rotate the middle layer containing all non-windowed edges 45 degrees in any direction, swap centers with edges, then use the sequence <code>(Li,Ui,L),(1.5)Mi,(Li,U,Li)</code>, or its symmetric varient, to resolve the cube-shape of the puzzle, along with key-hole method moves that keep all non-windowed edges in the middle layer.  Notice that if done right, this does not disturb the inner core or the corner cubies.  Resolve using key-hole method.  If a single edge needs to be flipped, bring it into the top face, rotate it 180, then bring it back down.
+		</p>
+		<h3>Step 7</h3>
+		<p>
+		Lastly, solve the edge face locations.  I use <code>(0.5)Mi,2F,(0.5)M</code> along with setup moves that permute and orient edge chunks about the middle layer to swap edge faces.  Since an even number of applications of this sequence must be made, remember that you can swap one edge face with another of the same color.  Once all edge chunks have been recomposited, position and orient them to complete the entire solve.
 		</p>
 	</body>
 </html>

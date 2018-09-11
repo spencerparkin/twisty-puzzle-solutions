@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Fused Cube</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Fused Cube</h1>
+		<p>
+		There are many ways a 3x3x3 Rubik's cube can be bandaged to make an interesting variant of the puzzle.  One such way has been given a name: the fused cube.  Simply put, a 2x2x2 corner of the cube is fused, leaving only 3 of the 6 faces free to rotate.  We will let these be the <code>R</code>, <code>U</code> and <code>F</code> faces for the solution to follow.  The <code>RF</code>, <code>RU</code> and <code>FU</code> edges will face you the entire time, as will the <code>RFU</code> corner.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Solve edge cubies in the bottom layer.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		Solve the corners and edges in the first 2 layers in the <code>FL</code> and <code>RB</code> edges.  I like to use the <code>FR</code> edge as a staging area for these edges.  Solve position and orientation for these.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		Place the corner in the bottom layer in the <code>RF</code> edge.  Ignore orientation.  Don't worry about the middle layer edge cubie in the <code>RF</code> edge.  We solve that in step 5.
+		</p>
+		<h3>Step 4</h3>
+		<p>
+		Now permute the corners in the top layer into their proper positions, ignoring orientation.  I use <code>U,R,Ui,Li,U,Ri,Ui,L</code>, pretending we have a regular 3x3x3.  Of course, when you execute <code>L</code> or <code>Li</code>, the middle layer is going along with it.  No worries.
+		</p>
+		<h3>Step 5</h3>
+		<p>
+		Position the last edge cubie in the middle layer and <code>RF</code> edge, ignoring orientation.  To do this while preserving all corner cubie positions, I setup the top layer with the needed rotation, then use <code>R,2[R,U,Ri,U,R,2U,Ri],Ri</code>.
+		</p>
+		<h3>Step 6</h3>
+		<p>
+		Now position the edge cubies in the top layer.  Use <code>2[R,U,Ri,U,R,2U,Ri]</code> with the needed setups.
+		</p>
+		<h3>Step 7</h3>
+		<p>
+		Lastly, orient all cubies in the top layer, and the edge and corner cubies in the <code>RF</code> edge.  Only one sequence is needed for all of this, and it is <code>A=Ui,R,U,2R,F,R,2F,U,F,Ui</code> with proper setups, which may include something like <code>|RFU|</code>.  Notice that <code>2A</code> orients corners, but not edge cubies; and <code>3A</code> orients edge cubies, but not corners.  Just use <code>A</code> by itself to orient corners or edges first, then take care of the other.
+		</p>
+	</body>
+</html>
