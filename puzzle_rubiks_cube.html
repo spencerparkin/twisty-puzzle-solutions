@@ -39,7 +39,7 @@
 		For any face <code>A</code>, letting <code>A'</code> denote the adjacent middle slice, we have <code>R'=L'i</code>, <code>U'=D'i</code> and <code>F'=B'i</code>.  Super-flip is then given by <code>3[3[R',Ui],|R|,|U|]</code>.  This flips all the edge cubies.
 		</p>
 		<p>
-		The snake pattern begins with <code>R,2F'i,Li,2U,R',2U,R'i,2|R|,R',2U,R'i,2U</code>.  Now just flip two edges on opposite sides of the cube to complete the pattern.
+		The snake pattern begins with <code>R,2F'i,Li,2U,R',2U,R'i,2|R|,R',2U,R'i,2U</code>.  Now just flip two edges on opposite sides of the cube to complete the pattern.  You can easily get snake-in-snake on an <code>NxNxN</code> if you do the nested snakes in the right order.
 		</p>
 		<p>
 		Cube-in-a-cube is easy to get on an <code>NxNxN</code> as it easily generalizes from what we do to get it on the <code>3x3x3</code>.  Start with <code>4[R',U'i]</code> to do a pair of center tri-cycles.  Now after a setup move, tri-cycle the needed edge cubies on one corner, then the opposite corner, accounting for proper orientation.  The sequence used is <code>A,B,Ai,Bi</code> where <code>A=R,U,Ri,Ui</code> and <code>B=Li,Ui,L,U</code>.  Now twist corners on opposite sides of the cube.  A setup move is useful for this.
