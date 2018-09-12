@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Flower Copter</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Flower Copter</h1>
+		<p>
+		In this solve description, I use <code>RU'</code> to mean a partial clock-wise rotation of an edge.  Without the prime, a full 180 degree rotation is implied.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Get it back into cube shape.  Admittedly, I've never jumbled this puzzle too far out of wack, so I don't know how bad it can get.  As far as I have jumbled it, though, it's never been too terribly hard to restore its cube shape.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		Solve the corner positions and orientations.  Easy.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		Use an obvious tri-cycle with an occational and equally obvious setup (single edge turn) to solve the positions and orientations of the edge pieces.
+		</p>
+		<p>
+		If you find that the last 2 edge pieces need to swap positions, rotate all 4 white corners one quater turn in their own face, and then rotate the yellow corners a quater turn in their own face to match.  Now try solving the edge positions again.
+		</p>
+		<p>
+		If you find that the last 2 edge pieces are misoriented, try-cycle them out of position with a correclty oriented edge in the mix, now flip one of the 2 edges, undo the tri-cycle, and then undo the flip.  In other words, there is an easy way to flip pairs of edges.
+		</p>
+		<h3>Step 4</h3>
+		<p>
+		With corners and edges solved, all that remains are the face pieces.  I call these the slivers and triangles.  In this step we solve all the triangle positions.  I simply use <code>(RU',LF'),FU,(RU',LF')i,FU</code> and its symmetric varient with setups to accomplish this.  The crux is figuring out the setup moves.  Some of them can be quite elaborate.  Try not to make them unnecessarily elaborate, however.  The longer the setup, the harder it is to unwind.
+		</p>
+		<p>
+		You can also use <code>(RU',LF'),FU,(RU',LF')i,(RF',LU')i,FU,(RF',LU')</code> with setups as well.  This as well as the previously mentioned sequence performs a pair of triangle face swaps.  Note that it is often useful to swap two triangle faces of the same color while swapping two other triangle faces of differring color.
+		</p>
+		<h3>Step 5</h3>
+		<p>
+		Laslty, solve the sliver piece positions.  There is an obvious tri-cycle for this.  The setup moves become longer as you near the end of the solve.  Remember that swapping two slivers of the same color can be done with a tri-cycle involving a sliver of one color, and 2 slivers of another.
+		</p>
+	</body>
+</html>
