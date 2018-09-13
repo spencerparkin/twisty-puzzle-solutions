@@ -9,13 +9,16 @@
 		<p>
 		In the discussion to follow, we are going to let <code>M</code> indicate a clock-wise rotation of a middle layer.  Exactly what this means will become clear from its usage.
 		</p>
+		<p>
+		Also, a distinction is made between edges and edge faces.  In the solved state, each edge is accompanied by two edge faces, one on either side.  These edges are the non-windowed variety.  The windowed variety are referred to as windowed edges, and they are not accompanied by edge faces.  An edge chunk refers to 2 edge faces along with an edge or center piece.
+		</p>
 		<h3>Step 1</h3>
 		<p>
-		Get all of the non-windowed edges into a single middle layer.
+		Get all of the non-windowed edges and edge faces into a single middle layer.
 		</p>
 		<h3>Step 2</h3>
 		<p>
-		Now look at the profile of the puzzle with the middle layer wrapping the axis pointed at your face.  What you'll see is zero or more edge faces poking out the side of the cube.  We don't yet care about any edges poking out the side of the cube.  To flatten these edge faces, we simply apply the sequence <code>(Li,Ui,L),(1.5)Mi,(Li,U,Li),(0.5)M,(R,U,Ri)</code>, and its symmetric varient, to a chunk into the top layer, then swap it with some other chunk in the middle layer, then bring that chunk in the top layer back into the middle layer.  The net effect is to chunks across the middle layer.  With practice, it's not hard to see how this can be done to flatten the edge faces, ignoring centers and edges.
+		Now look at the profile of the puzzle with the middle layer wrapping the axis pointed at your face.  What you'll see is zero or more edge faces poking out the side of the cube.  We don't yet care about any edges poking out the side of the cube.  To flatten these edge faces, we simply apply the sequence <code>(Li,Ui,L),(1.5)Mi,(Li,U,Li),(0.5)M,(R,U,Ri)</code>, and its symmetric varient, to bring a chunk into the top layer, then swap it with some other chunk in the middle layer, then bring that chunk in the top layer back into the middle layer.  The net effect is to swap chunks across the middle layer.  With practice, it's not hard to see how this can be done to flatten the edge faces, ignoring centers and edges.  What you'll do is progress through a sequences of cases until all edge faces are flattened.
 		</p>
 		<h3>Step 3</h3>
 		<p>
@@ -27,7 +30,7 @@
 		</p>
 		<h3>Step 5</h3>
 		<p>
-		Repeat step 1 using key-hole method moves, then get all of the centers in the right relative locations.  I use <code>(0.5)Mi,2F,(0.5)M</code>.
+		Repeat step 1 using key-hole method moves, then get all of the centers in the right relative locations.  I use <code>A=(0.5)Mi,2F,(0.5)M</code>.
 		</p>
 		<h3>Step 6</h3>
 		<p>
@@ -35,7 +38,10 @@
 		</p>
 		<h3>Step 7</h3>
 		<p>
-		Lastly, solve the edge face locations.  I use <code>(0.5)Mi,2F,(0.5)M</code> along with setup moves that permute and orient edge chunks about the middle layer to swap edge faces.  Since an even number of applications of this sequence must be made, remember that you can swap one edge face with another of the same color.  Once all edge chunks have been recomposited, position and orient them to complete the entire solve.
+		Lastly, solve the edge face locations.  I use <code>A</code> as given in step 5 along with setup moves that permute and orient edge chunks about the middle layer to swap edge faces.  Since an even number of applications of this sequence must be made, remember that you can swap one edge face with another of the same color.  Once all edge chunks have been recomposited, position and orient them to complete the entire solve.
+		</p>
+		<p>
+		Note that no setup move needs to be unwound when you're doing all of this.  Just interleave <code>A</code> with sequences that flip pairs of edge chunks, or sequences that permute edge chunks across the middle layer until they've all be solved in terms of color, ignoring position and orientation.  Have every two applications of <code>A</code> swap the position of 2 face pieces, then restore them.
 		</p>
 	</body>
 </html>

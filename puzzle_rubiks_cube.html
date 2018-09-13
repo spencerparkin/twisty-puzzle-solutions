@@ -10,7 +10,7 @@
 		</p>
 		<h3>Step 1</h3>
 		<p>
-		Begin by solving the edge cubie positions.  These are tri-cycled by sequences of the form <code>A,B,Ai,Bi</code>, where <code>A</code> and <code>B</code> are any two adjacent faces of the cube.  If you find that the last two edge cubies must be swapped, you have parity.  Solving this parity requires the only departure we need make from the constraint given above.  After rotate any desired face a quater turn, it then becomes possible for this step to be completed.  Of course, choosing the right face will minimize the amount of work needed to complete the step.
+		Begin by solving the edge cubie positions.  These are tri-cycled by sequences of the form <code>A,B,Ai,Bi</code>, where <code>A</code> and <code>B</code> are each any one of <code>R,Ri,L,Li,U,Ui,D,Di,F,Fi,B,Bi</code>, provided the faces in question are adjacent to one another.  If you find that the last two edge cubies must be swapped, you have parity.  Solving this parity requires the only departure we need make from the constraint given above.  After rotate any desired face a quater turn, it then becomes possible for this step to be completed.  Of course, choosing the right face will minimize the amount of work needed to complete the step.
 		</p>
 		<h3>Step 2</h3>
 		<p>
@@ -18,7 +18,7 @@
 		</p>
 		<h3>Step 3</h3>
 		<p>
-		Solve corner cubie positions.  Notice that pairs of swaps are performed by sequences of the form <code>3[A,B,Ai,Bi]</code> where <code>A</code> and <code>B</code> are any two adjacent faces.
+		Solve corner cubie positions.  Notice that pairs of swaps are performed by sequences of the form <code>3[A,B,Ai,Bi]</code> where <code>A</code> and <code>B</code> are as stated in step 1.
 		</p>
 		<h3>Step 4</h3>
 		<p>
@@ -29,7 +29,7 @@
 		I should at least mention a few other notable solution methods of the Rubik's cube.
 		</p>
 		<p>
-		Layer method comes to mind first.  There are essentially three steps: first layer, second layer, third.  The last layer has been studied theroughly by speed cubists and can be broken down into two sub-steps: OLL and PLL.  The first two steps are often combined into one called F2L.
+		Layer method comes to mind first.  There are essentially three steps: first layer, second layer, third.  The last layer has been studied theroughly by speed cubists and can be broken down into two sub-steps: OLL and PLL.  The first two steps are are collectively referred to as F2L, and usually broken down, not by layer, but by the cross step, and then the remainder.
 		</p>
 		<p>
 		Next is key-hole method.  Corners are solved first, then three of the four edge cubies on each of two opposite sides are solved leaving a notch or key-hole on both sides.  The last two unsolved edges across both of those sides are then solved simultaneously.  The last step is to position and orient the remaining edge cubies about the middle slice.
