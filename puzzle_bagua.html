@@ -7,24 +7,102 @@
 		<center><img src="images/bagua.jpg"></center>
 		<h1>Bagua</h1>
 		<p>
-		This puzzle is not for everyone, because it is quite difficult and time consuming.  I enjoy sitting down and solving it all at once in about an hour, or doing it about 5 minutes at a time over a few days while taking breaks at work or waiting for a process to complete, etc.
+		This puzzle is not for everyone, because it is quite difficult and time consuming.  I enjoy sitting down and solving it all at once in about an hour, or doing it about 5 minutes at a time over a few days while taking breaks at work.
 		</p>
+		<p>
+		The solve steps given here will make use of the following naming convention for the parts of the puzzle.
+		</p>
+		<center><img src="images/bagua_parts.jpg"></center>
 		<h3>Step 1</h3>
 		<p>
 		Up to the sliver peices, get it back into cube shape.  In other words, it would be a perfect cube save some sliver peices may be gently poking out the sides of the cube.  This just takes a lot of time and patience depending on how bandaged the puzzle has become.  Think about the Rubik's cube sequences you already know and how they can help.
 		</p>
 		<h3>Step 2</h3>
 		<p>
-		The crux of the puzzle is to solve the last two edge blocks.  All sequences described here assume that these last two edge blocks are in the top layer opposite one another; one in the front, the other in the back.
+		The sliver peices are now all that remain in terms of resolving the cube-shape of the puzzle.
+		There can be one or two mis-oriented slivers per edge block.  When there are two, they can poke out the same or opposite sides of the block.
+		The former case is desired and the latter case is quite bandaging, so separate them whenever you can.  Pair all the mis-oriented slivers so
+		that they reside on the same side of an edge-block.
 		</p>
 		<p>
-		Lastly, we must permute the kite pieces into place across the last two edge blocks.  To do this, we'll need 3 sequences <code>A</code>, <code>B</code> and <code>C</code> that can be used to create the kite tri-cycle <code>D=2[2[A,B],C]</code>.
-		The sequences are <code>A=2{Ri,2|F|,Fi,Ui,F,U,R,U,Ri,2|Fi|,F}</code>, <code>B=2{Ri,Li,Fi,Bi},U,2{Ri,Li},4D,2{R,L},Ui,2{F,B,R,L}</code> and <code>C=R,B,4U,Ri,Bi</code> or <code>C=Ri,Bi,4U,R,B</code>.  This is quite an involved sequence, but it isn't
-		too hard to remember.  I call <code>A</code> the edge flip, and it can be done in any way that simply flips the edge block over without the disturbing the other edge block; I call <code>B</code> the edge center swap; and <code>C</code> a clock-split or counter-clock-split.  The two varients of <code>C</code>, along with knowing <code>D</code> forward and
-		backards gives you four different kite tri-cycles across the remaining two edge blocks.
+		Having an edge block with two mis-oriented slivers on the same side of it, use <code>X=7[2R,(1/2)U,2U,(1/2)Ui]</code> to orient these slivers when the edge block is placed in the <code>RD</code> edge with the slivers poking out of the <code>R</code> face.
 		</p>
 		<p>
-		While getting the kites positioned, it will become clear why making sure that the final two edge blocks share a common color becomes an advantage if it looks as if the final two kites needs to be swapped.
+		Note that you can solve 4 such blocks simultaneously by swapping 4 corners with 4 edge-block centers.  The basic idea is <code>Y=2[(1/2)Ri,(F,3[R,U,Ri,Ui],Fi)]</code> done twice from the appropriate perspectives.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		With the puzzle back in perfect cube shape, we're ready to solve the corner triangles up their proper face, or the face opposite their proper face.  It won't matter which face as they'll constantly be flipping back and forth between those two faces during step 4.  We'll resolve them once and for all in step 6.
+		</p>
+		<p>
+		A convenient sequence that permutes corner triangles across adjacent faces is <code>(1/2)Fi,(1/2)Ri,U,(1/2)R,2F,(1/2)Ri,Ui,(1/2)R,(1/2)F</code> and it's clear symmetric varient.  This will get much of the job done.  For the remainder of corner triangles that can't be solved this way, use the sequence <code>X</code> in step 2 to move the top-facing edge triangle in the <code>RU</code> edge block into the corner triangle position in the <code>RUB</code> corner and top-face.  Of course, this will also create a pair of mis-oriented slivers in an edge-block, so you must apply <code>X</code> an even number of times.  If an odd number of appliations is needed, move an edge triangle of one color into a corner triangle of the same color.  The following illustrates the action of <code>X</code>.
+		</p>
+		<center><img src="images/bagua_vpair_tri_permute.jpg"></center>
+		<h3>Step 4</h3>
+		<p>
+		Now comes the most time-consuming part.  We must solve 10 of the 12 edge blocks.  For reasons that will become clear, make sure that the last 2 unsolved edge blocks share a common color.  We'll solve those 2 in step 5.
+		</p>
+		<p>
+		To get the edge blocks solved, you will apply the sequence <code>Z=(1/2){Fi,Bi},2U,(1/2){F,B}</code>, or its obvious varients, over and over again; but be assured, this is the only sequence, with the exception of setups, that you're going to need.  All setup moves will be sequences of 90-degree rotations of the faces.
+		</p>
+		<p>
+		As far as strategy goes, I like to solve edge block centers and the remainder of an edge block sepparately, and then bring them together with <code>W=(1/2)Ui,Ri,L,2D,R,Li,(1/2)U</code>, which, not contradicting what I said earlier, is not necessary, but convenient.
+		</p>
+		<p>
+		Note that nearing 10 solved edge-blocks, you'll find it necessary to temporarily unsolve a pair of edge-blocks, and then resolve them with another applicatoin of <code>Z</code>.
+		</p>
+		<h3>Step 5</h3>
+		<p>
+		Surely this is the crux of the puzzle; the part where we solve the remaining 2 edge blocks which, of course, must be done simultaneously.  This is also where we're going to find out if we have parity.
+		</p>
+		<p>
+		Use the sequence <code>Z</code> with proper setups to solve the 4 sliver peices across the 2 edge blocks.  Since <code>Z</code> must be applied an even number of times, you may need to swap 2 slivers of the same color-pair.
+		</p>
+		<p>
+		With the slivers solved, use <code>W</code> to solve the edge pieces across the 2 edge blocks.  If they're both oriented properly, we're good to go.  If exactly one is mis-oriented, then we have parity!  In that case, go to step P below, then revisit this step.
+		</p>
+		<p>
+		Assuming we don't have parity, continue to use <code>W</code> to solve all 4 edge triangles across the 2 edge blocks.  This is an example of where there being a common color shared between these last 2 edge blocks comes in handy.
+		</p>
+		<p>
+		With all 4 slivers, all 4 edge triangles, and both edge peices solved across the 2 remaining edge blocks, all that remains are the 8 kites peices.  These are solved using a tri-cycle requiring that the 2 edge blocks be setup in the <code>FU</code> and <code>BU</code> edge locations.  The tri-cycle is
+		<code>2[2[U,V],Z]</code>, where <code>U=Fi,2|F|,(Fi,Ui,F),U,(R,U,Ri),2|Fi|,F</code> and <code>V=F,B,R,L,W,Li,Ri,Bi,Fi</code>.  Note that <code>Z</code> may be replaced with <code>(1/2){F,B},2U,(1/2){Fi,Bi}</code> to reverse the direction of the tri-cycle.  The following two diagrams illustrate the action of the tri-cycle.
+		</p>
+		<center><img src="images/bagua_kite_tri_cycle_A1.jpg"><img src="images/bagua_kite_tri_cycle_A2.jpg"></center>
+		<p>
+		If the varient <code>2[2[V,U],Z]</code> is used, the action is shifted symmetrically as follows.
+		</p>
+		<center><img src="images/bagua_kite_tri_cycle_B1.jpg"><img src="images/bagua_kite_tri_cycle_B2.jpg"></center>
+		<p>
+		Don't forget that you can seemingly swap a pair of kites in a tri-cycle because the last 2 unsolved edge-blocks share a common color.
+		</p>
+		<p>
+		Lastly, I'll note here that <code>2[U,V],Z,2[Vi,Ui],Zi</code> could also be used, and is a pure kite tri-cycle in the sense that nothing else about the cube is changed by the sequence.  We can get away with (and it is easier to remember) <code>2[2[U,V,]Z]</code>, however, because at this step, we do not need to preserve the position and orientation of the other edge blocks or the corner peices; we'll address that in the step 7.
+		</p>
+		<h3>Step 6</h3>
+		<p>
+		We now solve the corner triangle peices of step 3.  This is very easy.  We do nothing more than apply <code>Z</code> with proper setups.  Note that two corner triangles of the same color may need to be swapped as <code>Z</code> must be applied an even number of times.
+		</p>
+		<h3>Step 7</h3>
+		<p>
+		Finally, the puzzle now looks like nothing more than a scrambled 3x3, and indeed, that's exactly what it is.  Solve it using any 3x3 method of your choice.  You should have no trouble doing so.  That is, you should not encounter any difficulty that would be presented by, say, a single edge being flipped, or a single corner between twisted.
+		</p>
+		<p>
+		Bask in the glory of having solved the Bagua!
+		</p>
+		<h3>Step P</h3>
+		<p>
+		Here we solve the main parity of the Bagua puzzle as we have come to it from step 5.  If done right, you'll only need to re-solve 2 edge blocks before returning to step 5, and they solve very quickly.
+		</p>
+		<p>
+		For the purposes of this discussion, we'll say that red is the color shared by the 2 remaining unsolved edge blocks.
+		</p>
+		<p>
+		First, get the 2 red edge triangles solved in the 2 remaining unsolved edge blocks, then solve the positions of the 4 red corner triangles if not already solved.
+		Now move all 4 edge blocks having a red side, solved or not, so that they're oriented correctly and positioned against the red face.  Having done this, all 8 red triangles (4 corner triangles and 4 edge triangles) are now positioned properly in the red face along with as much as we have been thus far able to solve in terms of kites and slivers containing red.
+		</p>
+		<p>
+		Now comes the parity fix!  The fix is simply to rotate the red face 45-degrees in either direction, then re-solve up to step 5 without changing the orientation of the red face center, or any other.  To expedite this process, we can use the sequence <code>Y</code> of step 2 in the red face (i.e., <code>R</code> being the red face) to get 4 edge blocks, all containing red, to also contain 2 mis-oriented slivers each.  Now, if <code>X</code> is used correctly, it can solve these mis-oriented slivers while only doing damage to the 4 said edge blocks.  When applying <code>X</code>, put the 4 edge blocks in the <code>RD</code>, <code>RU</code>, <code>BD</code> and <code>BU</code> edge locations.  Once the mis-oriented slivers are resolved, 2 of the 4 edge-blocks will solve very quickly, and you're back to step 5.  Jus tmake sure that every application of <code>X</code> moves a red edge triangle to a red corner triangle.
 		</p>
 	</body>
 </html>
