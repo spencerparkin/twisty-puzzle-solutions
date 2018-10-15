@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Curvy Copter</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Curvy Copter</h1>
+		<p>
+		A special kind of move uniquely offered by this puzzle takes the form <code>(2/3)(RU),(2/3)(LF),FU,(2/3)(RU)i,(2/3)(LF)i</code> along with its symmetric varient acting on the same edge <code>FU</code>.  Note that <code>2/3</code> is an estimate here.  The actual fraction is hard to calculate.
+		Note that this special move will swap orbits for a pair of peddal peices on opposite sides of the cube.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Locate the face of your choice by finding the desired color in common amongst the four edge peices touching the face.  Now simply orient those edge peices with the face using zero or one trivial turns per edge peice.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		We now position the peddal peices into the face chosen in step 1.  This is trivial for the most part.  What you may find, however, is that two peddal peices of the same color occupy the same orbit.  To fix this, use the special kind of move uniquely offered by this puzzle.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		In this step we complete the face chosen in step 1 by solving the corner peice positions and orientations for that face.  It is trivial.  As you do it, make sure that the edge peices in the middle layer and adjacent to those corner peices are oriented properly with respect to the corner peices.
+		</p>
+		<h3>Step 4</h3>
+		<p>
+		Now position the 8 peddal peices adjacent to the face chosen in step 1.  Note that you may have to trade orbits of peddals in the top layer before positioning them in the bottom layer.  The basic move for moving them from the top to bottom layer is <code>FR,FU,RU,FUi,FRi</code>, along with obvious varients, which is pretty trivial, and really goes without saying.
+		</p>
+		<h3>Step 5</h3>
+		<p>
+		Now position all the peddals adjacent to the face opposite that chosen in step 1.  If the chosen face was, say, the black face, note that this step will also, as a consequence, position all peddals in the yellow face.
+		</p>
+		<p>
+		Trade orbits as necessary and ignore the corner and edge peices in the top layer.  There is just one case that comes up during this step that is a bit tricky, but it has a trivial solution.  If you find that all peddals are in the correct orbits, but not all peddals can be positioned correctly using only 180-degree rotations of the edges in the top layer, then you need only trade the orbit of any two yellow peddals.  Once done, the peddals will solve using only 180-degree rotations of the edges in the top layer.
+		</p>
+		<h3>Step 6</h3>
+		<p>
+		Now solve the orientation of the edges in the final layer.  For each mis-oriented edge, simply use
+		<code>(2/3)(RU),(2/3)(LF),FU,(2/3)(RU)i,(2/3)(LF)i</code> immediately followed by <code>(2/3)(RF)i,(2/3)(LU)i,FU,(2/3)(RF),(2/3)(LU)</code> and then by <code>FU</code>.
+		</p>
+		<h3>Step 7</h3>
+		<p>
+		Position the corners in the final layer.  A tri-cycle for this is <code>2[BU,RU,FU,RU]</code> along with its obvious symmetric varient <code>2[LU,FU,RU,FU]</code>.  In both cases, the corner peice in the <code>FRU</code> position is preserved, while the other three are tri-cycled.
+		</p>
+		<h3>Step 8</h3>
+		<p>
+		Finally, orient the corners.  The needed sequences are <code>3[LU,FU,RU,BU]</code> and <code>3[BU,RU,FU,LU]</code>.  Each of these will preserve the orientation of the corner in the <code>LUB</code> position, while rotating all remaining corners in the top layer clock-wise or counter-clock-wise, respectively.  Note that an even number of these sequences must be applied as they also flip the orientation of all 4 edge peices in the top layer.  With practice, it is easy to get this step done with just 2 applications of these sequences.
+		</p>
+	</body>
+</html>
