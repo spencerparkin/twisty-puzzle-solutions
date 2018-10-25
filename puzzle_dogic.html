@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Dogic</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Dogic</h1>
+		<p>
+		I'm not sure why this kind of puzzle is so hard to find.  I don't actually own one.  Nevertheless, I have written software to simulate one, and thereby been able to solve it.  It's a fun puzzle.  Interestingly, the solved state is not unique.  You need only make each of the 20 faces of the icosahedron a solid color.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Solve all but the last 2 faces.  Trust me; it's easy and intuitive.
+		</p>
+		<h3>Step 2</h2>
+		<p>
+		Here I describe a tri-cycle with pictures and words.  Ideas from this can be used through-out the entire solve from the beginning.
+		</p>
+		<p>
+		Consider the following puzzle state.
+		</p>
+		<center><img src="images/dogic_step_1.jpg"></center>
+		<p>
+		As shown, move the teal triangle to the other teal triangle's position as indicated.  We then come to...
+		</p>
+		<center><img src="images/dogic_step_2.jpg"></center>
+		<p>
+		Here you can see that I've drawn a red-bordered triangle over the front-facing face.  Simply trade this face with one in the top layer, then bring it back down into the middle layer where it was, but in a different, desired orientation.  Specifically, one where the cyan triangle is ready to move into position.  Labeling the vertices of the off-white face <code>A</code>, <code>B</code>, <code>C</code>, counter-clock-wise, starting in the lower-left corner, the sequence is simply <code>(B,C,Bi),2Ci,(Ai,C,A)</code>.  We now have...
+		</p>
+		<center><img src="images/dogic_step_3.jpg"></center>
+		<p>
+		If at this point you don't know what to do, then I can't help you.
+		</p>
+	</body>
+</html>
