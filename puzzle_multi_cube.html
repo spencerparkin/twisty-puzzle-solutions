@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Multi Cube</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Multi Cube</h1>
+		<p>
+		This puzzle was invented by a guy named Greg who, apparently, invents all sorts of twisty puzzles.  It is a harder varient of the master skewb, and contains that puzzles as a factor group.  The set of all sequences that preserves the inner core part of the puzzle forms a normal sub-group.  Mod-ing out by this sub-group gives us the master skewb.
+		</p>
+		<p>
+		For this puzzle, I'm going to let <code>W=ULF</code>, <code>X=URF</code>, <code>Y=URB</code> and <code>Z=ULB</code>.
+		The associated middle layers will be denoted by <code>W'</code>, <code>X'</code>, <code>Y'</code> and <code>Z'</code>, respectively.  The corresponding corner twists in the bottom layer will be denoted by <code>w</code>, <code>x</code>, <code>y</code> and <code>z</code>, respectively.  (E.g., <code>y=DRB</code>.)  The meaning of, say, <code>y'</code> should now be clear.  Note that <code>y'=Wi'=W'i</code>.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Solve the inner edges (as apposed to the inner corners) relative to the center dots.  Just keep twisting and it practically solves itself.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		Align the center window peices with the center dots.  Use <code>A=W,Yi,Wi,Y</code> to preserve step 1.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		Solve the corner positions.  Use <code>Q=3A</code> with setups to do a pair of corner swaps, one in the top layer and one in the bottom.
+		</p>
+		<h3>Step 4</h3>
+		<p>
+		Orient the corners.  Use <code>X,Q,Xi,Q</code> to twist a pair of corners in the top layer.  Note that <code>Qi=Q</code>.
+		Note the obviouse variant <code>Xi,Q,X,Q</code> for twisting in the opposite direction.
+		</p>
+		<h3>Step 5</h3>
+		<p>
+		This step and step 6 can be done in any order, because here we present a pure tri-cycle of the bars, and in the next step we present a pure tri-cycle of the outer edges peices.
+		</p>
+		<p>
+		Solve the bars.  Use <code>A,y',Ai,y'i</code>.  The setups aren't hard.
+		</p>
+		<h3>Step 6</h3>
+		<p>
+		All that remains now is to position the outer edge peices which are inseparably connected to the inner corners.  A pure try-cicle sequence is given by <code>2[T,Yi,Ti,Y,|2U|]</code> with <code>T=W'i,Y',W',Y'i</code>.  Note that we can write <code>T=(Ai')~</code>.
+		</p>
+	</body>
+</html>
