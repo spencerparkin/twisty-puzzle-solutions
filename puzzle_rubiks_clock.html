@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Rubik's Clock</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Rubik's Clock</h1>
+		<p>
+		This puzzle is a bit intimidating at first sight, but it is actually trivial to solve.
+		The four buttons can be pushed in or out.  The four dials will move the 18 clocks
+		(9 on each side) in a way that depends on the state of the four buttons.  Rather than
+		describe the state of these buttons, and which dials to rotate, I'll only bother to talk
+		about which clocks to rotate on a face, because it is easy enough to figure out with
+		some expirimentation.
+		</p>
+		<p>
+		The puzzle is, of course, solved when all clocks are in the 12 o'clock position.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Choose either face of the puzzle.  We will solve this face first, then the other.
+		</p>
+		<p>
+		Notice that you can get the 4 corner clocks to move individually, so they're trivial to solve.
+		Solve the corner clocks first.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		Next we solve the 4 edge clocks.  Choose between any of the 2 corner clocks adjacent to a desired edge clock.  Now rotate the 4 clocks in that corner (this includes the center clock and 2 edge clocks, one of which is the desired edge clock) until the desired edge clock reads 12 o'clock.  Now move the 4 clocks in the other corner adjacent to the desired edge clock until the 2 said corner clocks and the desired edge clock all point in the same direction.  Now move the 6 clocks that include the 2 said corner clocks,
+		the center clock, the desired edge clock, and the 2 adjacent edge clocks until the desired edge clocks is in the 12 o'clock position.
+		</p>
+		<p>
+		Repeat this procedure for the remaining 3 edge clocks.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		Now solve the center clock.  The procedure here is really the same as what you've already done to solve the edge clocks.  The only difference is that the 2 corner clocks in question must simply be on opposite sides of the face.
+		</p>
+		<h3>Step 4</h3>
+		<p>
+		With one face solved, all that remains is the other face.  Convenient for us, the steps thus far given for solving the first face preserve the opposite face, so just repeat those steps on the second face, and you're done.
+		</p>
+		<h2>A Few Thoughts</h2>
+		<p>
+		The puzzle might become a little more interesting when we consider more optimal solutions.  Doing so, one probably needs to think about solving both faces simultaneously, or at least changing stratagy when tackling the second face.
+		</p>
+		<p>
+		It's also interesting to note that there are other subsets of the clocks that are rotatable.  That is, other subsets than those we used to solve the puzzle.  These other subsets, most likely, would play a role in a more optimal solution.
+		</p>
+		<p>
+		Lastly, after watching a you-tube video about solving this puzzle, I see that what I came up with is far from optimal.  (I never research a puzzle solution until after I've come up with my own.  I like to compare.)
+		</p>
+	</body>
+</html>
