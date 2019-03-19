@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Mixup Cube</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Mixup cube</h1>
+		<p>
+		I really like this puzzle, although the one I bought didn't turn very well and eventually broke.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		    Get it back into cube shape, but do it without disturbing the current parity of the middle slices.  That is, a single
+            45-degree rotation of a middle slice is fine, but it must be undone.  In other words, such rotations are fine as setup moves.
+		</p>
+        <p>
+            For example, do a single 45-degree rotation of a middle slice as a setup, then tri-cycle edge locations to get center and edge
+            pieces in their proper locations, even if not in their proper orientations, then undo the setup.
+        </p>
+        <p>
+            To orient edges in edge locations when they're off by 90-degrees (as apposed to 180-degrees, which is only possible on a 3x3),
+            I use <code>(1/2)Zi,Xi,F,X,(1/2)Z</code>.
+        </p>
+        <p>
+            Note that, collectively, there will be a proper orientation of the center pieces, but this won't be clear until the puzzle
+            is nearly solved.
+        </p>
+		<h3>Step 2</h3>
+		<p>
+            Once back in cube shape, try solving as a 3x3.  If doing layer-solve, the last layer will tell you what kind of parity
+            problem(s), if any, you have.
+        </p>
+        <p>
+            For example, if a single edge is flipped (which can't happen on a 3x3), then simply do a setup move that allows you to
+            flip that edge with a center put in an edge location (since edges are flipped in pairs on a 3x3.)
+        </p>
+        <p>
+            If everything is solved, except two corners need to swap, then you need to do a 45-degree rotation of any middle slice,
+            then begin again at step 1 above.
+        </p>
+	</body>
+</html>
