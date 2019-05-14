@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dreidel Cube</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+    <h1>Dreidel Cube</h1>
+        <p>
+            The following figure will be used in my solution outline.
+        </p>
+        <center><img src="images/dreidel_cube_figure.jpg"></center>
+        <p>
+            Here I have labeled the class of faces, and also what may be thought of as
+            the class of "cubies" or parts that make up the puzzle.
+        </p>
+        <h3>Step 1</h3>
+        <p>
+            Simply rotate all corners (class <code>A</code> parts) so as
+            to restore cube-shape as far as possible.  Of course, there will
+            still be plenty of class <code>D</code> and <code>E</code> parts
+            poking out, and parts of class <code>C</code> sunken in.
+        </p>
+        <h3>Step 2</h3>
+        <p>
+            Here we restore cube-shape.  I begin with one strategy which works
+            quite well for some time until a different strategy must be employed
+            to finish things up.
+        </p>
+        <p>
+            The first strategy is to build sandwiches of class <code>E</code>
+            parts with those of class <code>D</code>.  Specifically,
+            a class <code>E</code> part is sandwiched between two class <code>D</code> parts.
+            Once the sandwich is built, a corner rotation parks it in one of 2 slots
+            available in a part of class <code>B</code>.  This corner rotation, however,
+            must not unpark any other sandwich you've built and parked, so be sure to
+            move things around in prepartion for the parking.  Furthermore, this rotation
+            will undo step 1 in at least one corner (class <code>A</code> part.)  To remedy
+            this, build your next sandwich using parts near this class <code>A</code> part,
+            or find 3 unsolved sandwiches, locate them about the class <code>A</code> part,
+            then twist that part to restore step 1.
+        </p>
+        <p>
+            This strategy will, however, only get you so far.  The second strategy is
+            to first forget about the class <code>D</code> parts, and only focus on
+            getting the class <code>C</code> and <code>E</code> parts into their proper
+            orbits.  There is a trivial tri-cycle you can use to do this.  Once all such
+            parts are in their proper orbits, use <code>3[R,RUB,Ri,RUFi]</code> to flatten
+            the parts of class <code>D</code>.
+        </p>
+        <p>
+            As just a point of interest, note that <code>6[R,RUB,Ri,RUFi]</code> can be used
+            to permute the class <code>E</code> and <code>C</code> parts without unflattening
+            the parts of class <code>D</code>, although this sequence is not necessary for
+            the solution being given here.
+        </p>
+        <h3>Step 3</h3>
+        <p>
+            Next we align colors between the parts of class <code>E</code> and <code>D</code>.
+            This is a lot of work, but easy to accomplish.  After getting things ready, simply
+            use <code>RUFi,RUB,R,RUBi,2Ri,RUF</code> or something like <code>3RUF,3LUB,2U,3RUF,3LUB</code>.
+            Each of these does a pair of color swaps between parts of class <code>D</code>.
+            (Or you could think of it as swapping parts of class <code>E</code>.)
+            Note that we are ignoring the parts of class <code>C</code> in this step.
+        </p>
+        <h3>Step 4</h3>
+        <p>
+            We now align colors for parts of class <code>C</code> with those of class <code>A</code>,
+            and do so, of course, without undoing step 3.  This can be accomplished with all the moves
+            of step 3; all that differs is the setup.  Make sure that you're only doing pairs of swaps between
+            parts of class <code>D</code> of the same color.
+        </p>
+        <p>
+            Note that what may be a more efficient way to get this step done is to find your pair of
+            swaps between parts of class <code>D</code> and <code>E</code> that doesn't undo step 3,
+            (because you're swapping between same colors), then re-use this swap over and over while
+            simply slotting whole corners (composites of parts of class <code>A</code> and <code>C</code>)
+            into and out of the needed locations.  This must be done with the <code>3RUF,3LUB,2U,3RUF,3LUB</code> sequence.
+        </p>
+        <h3>Step 5</h3>
+        <p>
+            With all sandwiches now solved in terms of both color and shape, it's time to park
+            them where they belong color-wise.  This is trivial until perhaps near the end where
+            a single tri-cycle cannot finish the step.  If you find that a pair of sandwiches need
+            to swap to complete the step, then execute a sequence such as <code>RUFi,RUB,R,RUBi,2Ri,RUF</code>
+            or <code>3RUF,3LUB,2U,3RUF,3LUB</code> in such a way as to not undo step 4.  Doing so is simply
+            a matter of making sure that you're swapping between same colors for parts of class <code>D</code>
+            and <code>E</code> as well as <code>C</code> and <code>A</code>.  Having performed the null-swap, if
+            you will, the sandwiches should now solve using tri-cycles.  Note that if you are careful about
+            which null-swap you do, it can minimize the number of tri-cycles needed to complete the step.
+        </p>
+        <h3>Step 6</h3>
+        <p>
+            Lastly, now that we've reduced the puzzle to a 3x3x3, solve it as such.  If you find that a
+            single corner is twisted near the end, simply twist that corner into its proper orientation,
+            then tri-cycle the sandwiches into their proper locations.
+        </p>
+    </body>
+</html>
