@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Mastermorphix</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<center><img src="images/mastermorphix.jpg"></center>
+		<h1>Mastermorphix</h1>
+		<p>
+		Admittedly, I struggled with this cube for quite some time before
+		realizing that it was simply a shape-mod of the classic Rubik's Cube.
+		I think the shape may lend itself to helping one think about solving
+		the Rubik's cube in some, perhaps, unorthodox ways, but I've never
+		been cleaver enough to discover any such thing.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Just do a classic layer-solve for the first two layers, accounting for
+		center-peice orientation.  The only
+		interesting part of the solve is the last layer, which is addressed
+		in the next step.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		Like the Fisher cube, part of the difficulty stems from not being able to recognize
+		the proper orientation of peices of the puzzle due to the shape modification.
+		Specifically, we can't recognize the orientation of two of the corner peices in the final layer.
+		What adds to difficulty here beyond the Fisher Cube, however, is that we also can't
+		easily recognize the proper orientation <i>or position</i> of the edge peices in the
+		final layer.  This, of course,
+		is also due to the shape modification.
+		</p>
+		<h4>Step 2a</h4>
+		<p>
+		Properly orient the center peice of the top layer.
+		</p>
+		<h4>Step 2b</h4>
+		<p>
+		Permute the edge peices so that the colors are consistent with the center, even if orientations are off.  Now try fixing the orientation with a standard move to do so.  This will take them out of proper position, so then just permute them back into proper position with respect to color against the center peice.  Everything usually solves, as far as the edges and center are concerned, on the second permutation of the edges.  If not, just repeat.
+		</p>
+		<h4>Step 2c</h4>
+		<p>
+		Position and orient the corners as usual.  If a single corner is misoriented, it just means you must re-orient it along with one of the orientation-neutral corners.
+		</p>
+	</body>
+</html>
