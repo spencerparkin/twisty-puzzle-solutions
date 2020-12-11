@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: 5x3x3 Cube</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<center><img src="images/cube_5x3x3.jpg"></center>
+		<h1>5x3x3 Cube</h1>
+		<h3>Step 1</h3>
+		<p>
+		I start by just doing a layer solve with either the white, yellow, green or blue
+		face as the first layer.  Ignore the two 1x3x3 layers that pad a 3x3x3 as you
+		restore both shape and color.  The next step addresses the finaly layer of
+		the well-known layer method.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		The final layer becomes interesting only because the corners don't necessarly
+		solve, though the edges do.  To remedy this case, you must realize that there
+		is ambiguity in two of the four edges in the final layer.  Two of those edges
+		can be positioned on either side of the cube.  The edges mentioned here are those
+		that connect with the 1x3x3 extraneous layers.  What you simply need to do is
+		swap their positions, and then the corners will tri-cycle into place.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		With the inner 3x3x3 solved, you now need ony solve the two 1x3x3 layers.
+		I solve edges, then corners in one layer, then the same in the other.
+		</p>
+		<p>
+		Adapted for this puzzle, a useful and well-known sequence for edge perumtation
+		is <code>A,B,Ai,Bi</code> where <code>A=2R,U,2Ri,Ui</code> and <code>B=2Li,Ui,2L,U</code>.
+		</p>
+		<p>
+		Tri-cycling corners in the last layer may require a setup of <code>2F</code> if you
+		are using some varient of <code>2[U,2R,Ui,2R]</code>.
+		</p>
+	</body>
+</html>

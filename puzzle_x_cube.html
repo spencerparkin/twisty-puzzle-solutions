@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: The X Cube</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<center><img src="images/x_cube.jpg"></center>
+		<h1>The X Cube</h1>
+		<p>
+		This cube is just like the 5x3x3, but instead of having just two extraneous 1x3x3 layers,
+		it has four of them.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Just start with layer-solve using the white or yellow face as the base layer.
+		Ignore the four 1x3x3 extraneous layers while restoring the shape of the puzzle (an "X"),
+		as well as the 3x3 white and yellow faces in terms of color.  The finaly layer is addressed
+		next.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		Reaching the final layer of layer-solve, you may notice an odd number of 1x1x2 edges
+		flipped.  The problem here is exactly the same problem you may encounter in Step 2
+		of the <a href="puzzle_fisher_cube.html">Fisher Cube</a>.  Use the same strategy to
+		solve it.
+		</p>
+		<h3>Step 4</h3>
+		<p>
+		Solve three of the four 1x3x3 extraneous layers.  These are easy to put together.
+		</p>
+		<h3>Step 5</h3>
+		<p>
+		For the finaly 1x3x3 extraneous layer, the edges may solve while the corners don't.
+		Remedying this requires realizing that, just like the <a href="puzzle_5x3x3_cube.html">5x3x3 cube</a>,
+		there is, let's say, "false freedom" in the placement of edges in the final layer of layer-solve.
+		In Step 2 of my solution for the <a href="puzzle_5x3x3_cube.html">5x3x3 cube</a>, I called it
+		an ambiguity, but in any case, you just need to realize that the four 1x1x2 edges can't be
+		positioned in just any random way, though any such way solves the 3x3 face in terms of color
+		and shape.  Simply swap any two such edges in a re-solve of the final layer of layer-solve,
+		then the final extraneous 1x3x3 layer will
+		solve without difficulty.  Of course, after such a swap, you may have to go back to Step 4,
+		but once you get back to Step 5, you'll be able to complete the puzzle without trouble.
+		</p>
+		<p>
+		It's possible that an equivalent way to think about this problem is simply in the orientation
+		of the center cubie of the 3x3 face of the final layer.  It has 4 possible orientation, but
+		only two of them will allow a solve.  I have tested this, and it indeed appears to be the case.
+		That being so, a much easier parity fix is to simply turn the finaly layer once (left or right),
+		then resolve the extraneous 1x3x3 layers, but being careful as you do so that you do not change
+		the parity of the center cubie.
+		</p>
+	</body>
+</html>
