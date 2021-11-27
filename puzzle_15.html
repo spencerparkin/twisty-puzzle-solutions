@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: The 15 Puzzle</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<center><img src="images/the_15_puzzle.jpg"></center>
+		<h1>The 15 Puzzle</h1>
+		<p>
+		This isn't a twisty puzzle, but in terms of group theory, it is in the same classs of puzzles by being isomorphic to the alternating group of order 15!/2.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Solve for tiles 1 through 4.  Tiles 1 through 3 are trivial.  The fourth tile is a bit tricky if it doesn't magically land in place.  What I do is place 4 under the 3.  Now put the space under the 1.  Now shift tiles 1 through 4 by pulling 1 down and the rest left.  Now put the space where the 4 needs to go.  Now you can just shift tiles 4 through 1 into place.
+		</p>
+		<h4>Step 2</h3>
+		<p>
+		Solve for tiles 5 through 8 using exactly the same stratagy as that done for tiles 1 through 4 in step 1.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		Solve for tiles 9 and 13.  Arbitrarily put 9 in its place first.  This is trivial while 13 may give you some trouble.  If it doesn't land where it needs to go automatically, just get 13 into the correct row and no more than 2 slots away from its goal while also getting the empty space immediately right of the 9.  At this point, there is a tri-cycle of 3 tiles that is easy to figure out by doing a basic commutator of the most trivial tri-cycle possible in a 2x2 sub-square that contains the empty space.  Notice that there are two 2x2 sub-squares that share a 2x1 column containing the empty space.  I'm leaving the commutator up for discovery here, because it really is easy to figure out.  Its net result is to tri-cycle all tiles in a 1x3 row without disturbing the rest of the puzzle.  Clearly you can use this once (in the right direction) or twice (in the wrong direction) to get the 13 placed.
+		</p>
+		<h3>Step 4</h3>
+		<p>
+		Solve for tiles 10 and 14.  Arbitrarily put 10 in its place first.  Now use the exact same stratagy you used in step 3 to get 14 into its place.
+		</p>
+		<h3>Step 5</h3>
+		<p>
+		This is the easiest step.  Just do the trivial tri-cycle on the lower-right corner's 2x2 sub-square until the puzzle is solved.  It will always tri-cycle correctly into place.  If it doesn't, then somebody assembled the puzzle wrong.  Of course, one direction of the tri-cycle will possibly get to the solution quicker than the other.
+		</p>
+	</body>
+</html>
