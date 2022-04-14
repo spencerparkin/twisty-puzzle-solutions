@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Gem 8</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Gem 8</h1>
+		<p>
+		This is another puzzle I don't actually own, so I figured out how to solve it
+		using my twisty-puzzle software.  Our labeling will be as follows.
+		</p>
+		<center><img src="images/gem8.jpg"></center>
+		<p>
+		There are 5 classes of faces: hexagonal centers, triangular centers,
+		bow-tie edges, corners, and triangular faces adjacent to the hexagonal centers.
+		I'll call these latter faces just regular triangular faces for short.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Solve the bow-tie edges.  Solving them in a single face is easy and intuitive.
+		An obvious tri-cycle to solve the remainder is easy.  If they're all positioned correctly,
+		except that two are oriented wrong, then use <code>(c',d,c,d'),(a,d',a',d')</code>.
+		</p>
+		<h3>Step 2</h2>
+		<p>
+		Solve the regular triangular faces.  Use <code>X=(c,d',c',d'),f,(c,d',c',d')'</code> (with setups, of course), which tri-cycles as follows.
+		</p>
+		<center><img src="images/gem8_tricycle_1.jpg"></center>
+		<h3>Step 3</h3>
+		<p>
+		Now solve the corner pieces.  Interestingly, a permutor of the corners that preserves
+		everything else can be found using <code>X</code> from the previous step.
+		It is <code>f',d',X,d</code>, and gives the following tri-cycle.
+		</p>
+		<center><img src="images/gem8_tricycle_2.jpg"></center>
+		<h3>Step 4</h3>
+		<p>
+		Lastly, solve the triangular faces.  They can be permuted with <code>4(a,b,c,d)</code>,
+		which gives the following tri-cycle.
+		</p>
+		<center><img src="images/gem8_tricycle_3.jpg"></center>
+		<p>
+		Admittedly, this sequences wasn't found by any sort of reasoning.  I just happened upon it.  The software greatly helps in discovering such sequences.  And often, that's how you come up with any solution.  You just try obvious commutators, or commutators of commutators, or maybe not so obvious commutators, and then just see what they do to an already solved puzzle.  If the outcomes seems desirable, then you combine it with setup moves (make conjugates with them.)
+		</p>
+	</body>
+</html>
