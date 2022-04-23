@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Rubik's Cube, Dual Faces</title>
+		<link rel="stylesheet" href="style.css">
+		<style>
+		* {
+		  box-sizing: border-box;
+		}
+
+		.row {
+		  display: flex;
+		  margin-left:-5px;
+		  margin-right:-5px;
+		}
+
+		.column {
+		  flex: 50%;
+		  padding: 5px;
+		}
+
+		table {
+		  border-collapse: collapse;
+		  border-spacing: 0;
+		  width: 100%;
+		  border: 1px solid #ddd;
+		}
+
+		th, td {
+		  text-align: left;
+		  padding: 16px;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #222222;
+		}
+		</style>
+	</head>
+	<body>
+		<h1>The Rubik's Cube, Dual Faces</h1>
+		<center><img src="images/rubiks_cube_dual_faces.jpg"></center>
+		<p>
+		This puzzle is a fun idea, but is poorly executed.  Each face, except for the centers, can take on one of two colors (sometimes both colors are the same, but most often they are different.)  The two possible colors are perceived by tilting the face back and forth as each is a hologram, of sorts.  I say, poorly executed, because it is terribly difficult in some cases to determine which two colors are placed on some given faces.  For example, it is very hard to distinguish between yellow and orange, or orange and red, or white and yellow.  Worse still, there appear to actually be three colors on a few faces, because I think there is some color blending going on between the two intended colors.
+		</p>
+		<p>
+		Despite all that, even if the colors were easy to distinguish, the puzzle would still be very hard, because inspection of the faces while analyzing the state of the puzzle would be very tedious and cause you to possibly lose your concentration.  Admittedly, and as you can see from the image above, to get this thing solved, I had to break down and make my own stickers.  Each sticker has an unordered pair of letters on it to represent the colors.  This made analyzing and solving the puzzle many orders of magnitude easier than without them.  Still, the puzzle presents a surprisingly fun challenge.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Solve the white-green-red corner cubie.  Why?  Let's talk about that for a bit.
+		</p>
+		<p>
+		Following are two tables.  The first counts the number of edges that can serve in a corresponding position/orientation.  The second counts the number of corners that can serve in a corresponding position/orientation.
+		</p>
+		<div class="row">
+			<div class="column">
+				<table>
+					<tr><th>Edge</th><th>Count</th></tr>
+					<tr><td>W-R</td><td>3</td></tr>
+					<tr><td>W-B</td><td>2</td></tr>
+					<tr><td>W-O</td><td>3</td></tr>
+					<tr><td>W-G</td><td>2</td></tr>
+					
+					<tr><td>G-R</td><td>2</td></tr>
+					<tr><td>R-B</td><td>3</td></tr>
+					<tr><td>B-O</td><td>1</td></tr>
+					<tr><td>O-G</td><td>3</td></tr>
+					
+					<tr><td>Y-R</td><td>2</td></tr>
+					<tr><td>Y-G</td><td>4</td></tr>
+					<tr><td>Y-O</td><td>2</td></tr>
+					<tr><td>Y-B</td><td>2</td></tr>
+				</table>
+			</div>
+			<div class="column">
+				<table>
+					<tr><th>Corner</th><th>Count</th></tr>
+					<tr><td>W-B-O</td><td>2</td></tr>
+					<tr><td>W-O-G</td><td>2</td></tr>
+					<tr><td>W-G-R</td><td>1</td></tr>
+					<tr><td>W-R-B</td><td>2</td></tr>
+					
+					<tr><td>Y-B-R</td><td>2</td></tr>
+					<tr><td>Y-R-G</td><td>2</td></tr>
+					<tr><td>Y-G-O</td><td>2</td></tr>
+					<tr><td>Y-O-B</td><td>2</td></tr>
+				</table>
+			</div>
+		</div>
+		<p>
+		So here, you can see that there are 4 different edge cubies that can serve in the yellow-green edge-cubie position/orientation!  Which one do we choose to go there?  Well, it's not immediately clear at all.  In fact, I'm not even sure if this puzzle has exactly one solution.
+		</p>
+		<p>
+		In any case, we see that there is one and only one corner cubie that can go into the white-green-red corner, so we might as well start by putting it there.
+		</p>
+		<p>
+		From the first table, you might think there is a clear choice about the blue-orange edge, but this turns out not to be the case!  In this case, there is just one edge cubie that will go there, but its orientation remains ambiguous.  More on this later!
+		</p>
+		<p>
+		Note that while counting the number of edge cubies that can go into a particular corner, I was careful to note the winding of the colors.  Some edges look like they can go into a corner, but they can't, because the colors are not wound in the correct order (clock-wise or counter-clock-wise.)
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		Having put a single corner cubie in place, we might as well solve all corners first before considering the edges.  My stratagy was to place the 3 remaining corners in the white face initially by arbitrary/random choice, then try to solve all corners in the yellow face.  If the corners in the yellow face won't solve, then swap out one of the corners in the white face with its counter-part, then try solving the yellow face again.  The key to all this is to do it systematically so that you are on track to exploring all 2^3 = 8 possibilities in the white face.  Consider imagining a binary code as you swap out corners in the white face.
+		</p>
+		<p>
+		No sequences of permuting or orienting corner cubies are given here, because they're very well-known.  Look at my <a href="puzzle_rubiks_cube.html">Rubik's Cube</a> page for additional info.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		With the corners solved, now come the edges.  You can permute edges without disturbing corners with the well-known sequence
+		<code>X,Y,Xi,Yi</code> with <code>X = R,U,Ri,Ui</code> and <code>Y = Li,Ui,L,U</code>.  There are several well-known sequences too for flipping the orientation of pairs of edge cubies without distrubing anything else.  Setups are very helpful, as always, of course.
+		</p>
+		<p>
+		So let's talk stratagy here.  I really just employed the same stratagy here as for the corners.  I started with an arbitrary initial guess at the edge cubies in the white face.  If the remainder of the cubies didn't solve, then I knew I had to swap out one of the white edge cubies for another.  The problem this time is that the combinatorics are much higher, so I'm surprised my first solve didn't give me too much trouble.  (Perhaps there is more than one solution for sanity's sake?)
+		</p>
+		<p>
+		Of course, we know the position of the blue-orange edge cubie, but we don't know its proper orientation.  So if ever you find a single other edge cubie needs to be flipped, simply flip it with the blue-orange edge cubie.
+		</p>
+		<p>
+		I can't help but think there has to be some logical deductions one could make to speed up the solving process, but none come to mind right now.  I'll have to keep scrambling and solving this puzzle to get more experience with it, and then maybe I'll discover something like that.
+		</p>
+	</body>
+</html>
