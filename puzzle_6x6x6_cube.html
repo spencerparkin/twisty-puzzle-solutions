@@ -6,39 +6,73 @@
 	<body>
 		<h1>The 6x6x6 Rubik's Cube</h1>
 		<p>
-		This discussion generalizes to any <code>NxNxN</code>, and in doing so, I don't bother to give any sequences.  That withstanding, I still believe this is useful information.  Also, I would say that the puzzle is most interesting when <code>N</code> is even, because without center edge cubies, parity is harder to avoid.
+		Note that this discussion generalizes to any <code>NxNxN</code>.  The case
+		when <code>N</code> is even is actually slightly harder than when <code>N</code> is odd,
+		because it creates ambiguity in the correct orientation of the edges.
 		</p>
 		<p>
 		Note a fun bandaging of this puzzle <a href="puzzle_6x6x6_subgroup.html">here</a>.
 		</p>
+		<p>
+		I'm going to use <code>M<sub>L</sub></code> and <code>M<sub>R</sub></code> to denote
+		any middle slice left of center, or right of center, respectively.  For comparison, the left-most slice is <code>L</code>, and the right-most slice is <code>R</code>.
+		</p>
+		<p>
+		Similarly, I will use <code>P<sub>D</sub></code> and <code>P<sub>U</sub></code> to denote the equivilant idea with slices parallel to <code>D</code> and <code>U</code>, respectively.
+		</p>
+		<p>
+		I will use <code>T</code> to denote the entire middle slice parallel to <code>F</code> and <code>B</code>, but having the same orientation as <code>F</code>.
+		</p>
 		<h3>Step 1</h3>
 		<p>
-		I like to solve the faces first, ignoring the edges and corners.  The crux is the last two faces.  Use a simple and trivial commutator to tri-cycle center cubies between these two faces.  Don't worry about the centers all being solved correctly relative to one another, only that they are all one solid color.
+		Put the centers together, not necessarily in their correct locations.  This is very intuitive.  The crux is at the final two faces.  There is a trivial commutator you can find that tri-cycles centers while preserves corners, even though we don't need such preservation at this stage.
+		</p>
+		<p>
+		Here is an example: <code>M<sub>L</sub>',U,M<sub>R</sub>,U',M<sub>L</sub>,U,M<sub>R</sub>',U'</code>
+		</p>
+		<p>
+		There are obvious variations of this.
+		</p>
+		<p>
+		Note that the two middle slices involved here do not necessarily need to be the same distance from center.
 		</p>
 		<h3>Step 2</h3>
 		<p>
-		Now put the edges together.  A common strategy is to align an edge, then swap it out for an unsolved edge, then undo the damage made to the centers.
-		The last few edges are the crux.  There is a simple commutator that will permutate edge cubies across two edges.  Note that the last edge may not solve completely due to parity.  Don't worry about it; we'll address that case later on.  Alternatively, all edges may appear, by the end of this step, to be completely re-assembled, but one of them may actually need to be swapped in its entirety.  We can detect that case later on.
+		Now put the edges together while preserving centers.  Again, there is a trivial commutator you can find to do this that preserves the centers, and such preservation is obviously needed at this stage.
+		</p>
+		<p>
+		Here is an example: <code>P<sub>D</sub>',X,P<sub>D</sub>,X'</code>
+		</p>
+		<p>
+		Here, <code>X</code> is given by: <code>(L',U',L),2U,(F,U',F')</code>
+		</p>
+		<p>
+		Again, there are obvious variations of this.
+		</p>
+		<p>
+		Note that there is a much faster method of getting all the edges put together where center slices are temporarily scrambled (but always kept as 4 sets of 4 lines) while the first 8 edges are solved.  The final 4 edges are then put together traditionally after quickly fixing the said scrambled centers.  Details are left to the reader.
+		</p>
+		<p>
+		Lastly, it's important to understand that in this step you can always get all the edges put together, but the final edge might not have consistent orientation.  Don't worry about this for now.
 		</p>
 		<h3>Step 3</h3>
 		<p>
-		Now get the centers solved relative to one another.  It's interesting to see how doing so preserves the edges.  Split the cube in half a quater turn, turn a face 180-degrees across the split, unsplit, and turn the face again.  This simple commutator swaps whole face centers without disturbing edges.  Use the corner cubies to make sure you have the whole centers in the right places relative to one another.
+		At this point, the cube looks like a 3x3x3, save that one of the edges, as said before, might not have consistent orientation.  In any case, try to solve the cube as a 3x3x3.
+		(My page for that is <a href="puzzle_rubiks_cube.html">here</a>.)  Trying to do so, you'll encounter zero or more of two different problems: Either two composite edges will need to be swapped, or one composite edge (usually chosen as the one with inconsistent orientation) needs to be flipped.  This latter problem is equivilant to fixing the edge with possibly inconsistent orientation.  Of course, if you don't encounter either of these problems, then the 3x3x3 solve finishes the puzzle.
 		</p>
-		<h3>Step 4</h3>
+		<h3>Step 3A -- Swapping two composite edges</h3>
 		<p>
-		Now try to solve as a 3x3x3, even if one of your edges doesn't look complete.  Using layer-solve method, look at the orientations of the 4 remaining edges when you get to the final layer.  If there is an even number of them oriented correctly (or incorrectly), then all edges in the first 2 layers are oriented correctly, even if one of them appears entirely flipped.  On the other hand, if all edges in the first 2 layers are oriented correct, and there is an odd number of edges oriented correctly (or incorrectly) in the top layer, then one of those edges needs to be flipped.
+		This is trivial.  Just use the edge tri-cycle found in Step 2 above, but adapt the algorithm to work with all middle slices left and right of center.
+		</p>
+		<h3>Step 3B -- Fixing inconsistent orientation of a composite edge</h3>
+		<p>
+		This is actually the most interesting part of the puzzle, in my opinion.  Note that it looks like an orientation problem, but it's actually a positioning problem with regard to the edge pieces.
+		</p>
+		<p>The problem is that a subset of the edge pieces can't be solved by tri-cycles, because two of them need to be swapped.  The fix is actually trivial, but causes a significant amount of back-tracking in the solve.  What you do is simply rotate a proper middle slice 90 degrees, and that fixes the problem, because it's an even permutation in a subgroup of the edges, at which point, they can now be solved by tri-cycles.  This is where the preservation property of the tri-cycle found in Step 1 actually matters.  A proper slice is any slice in the subgroup (or factor group) of unsolved edge pieces, but the best choice is a slice involving edge pieces already misplaced.  This helps minimize the extent of the back-tracking.
 		</p>
 		<p>
-		Resolving the parity in this step is just a matter of swapping one or more pairs of edges in a single edge block.  Of course, you can't do that with tri-cycles, so what you do is simply rotate a single inner-layer of the cube 1 quarter turn to perform a quad-cycle, resolve center peices, and then tri-cycle the edges into place.
-		There is a simple tri-cycle commutator that permutes edges without messing up anything else about the cube.  In other words, it is a pure edge tri-cycle.
+		All that said, some algorithms can help reduce the extent of the back-tracking even further.  (There is a very lengthy algorithm someone has come up with for solving the parity problem altogether, but I can't remember it.)  What I do is execute <code>Y,2T,Y',2T,M<sub>L</sub>,|L|,Y'</code>, where <code>Y=M<sub>L</sub>',2U,M<sub>L</sub>,2U</code>.  What this does is simply take the unsolvable tri-cycle state of the edge pieces and put them in a solvable state.  Finish up with edge tri-cycling as usual, and you're done.
 		</p>
-		<h3>Step 5</h3>
-		<p>
-		Once you're sure that not only are all edge blocks completely re-assembled, but also oriented properly, complete the 3x3x3 solve.  At this stage, however, there is still one last type of parity you can encounter, and it is the case that the corners do not solve with tri-cycles.  To fix this, you have to swap a pair of whole edge blocks.  There is an easy sequence that does this.
-		</p>
-		<p>
-		To give some intuition behind the parity, a slower, but more revealing way to solve the parity is to simply turn a singler outer-layer of the cube 1 quarter turn,
-		pure-permute edges, then position and orient corners.  Thinking about it this way unifies the 2 types of parities encountered on the cube in the sense that they're both based on a single layer (inner or outer) being out of parity.
-		</p>
+		
 	</body>
 </html>
