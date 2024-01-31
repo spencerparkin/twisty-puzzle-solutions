@@ -15,8 +15,13 @@ code {
 
 a {
 	text-decoration: none;
+    color: hotpink;
 }
 
 a:visited {
 	color: green;
+}
+
+a:hover {
+    color: green;
 }

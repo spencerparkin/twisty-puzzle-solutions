@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: 2x3x3 Cube</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>2x3x3 Cube</h1>
+        <p>
+        Note that <code>U</code> and <code>D</code> would be 90-degree turns on this cube, but each of <code>L,R,F,B</code> would be a 180-degree turn.
+        Of course, this assumes you're holding it so that the two 3x3 parts are stacked on top of one another vertically.
+        </p>
+		<h3>Step 1</h3>
+		<p>
+        What I do first is get the edge cubies on one side resolved.  Super easy.
+        </p>
+        <h3>Step 2</h3>
+        <p>
+        Now do the corners.  An easy commutator is <code>Li,U,R,Ui,L,U,Ri</code>.  Varients of this are easy to find.
+        </p>
+        <h3>Step 3</h3>
+        <p>
+        At this point, one 3x3 side is finished, and only the other 3x3 side remains.  Use the well-known
+        sequence <code>X,Y,Xi,Yi</code> with <code>X=R,U,Ri,Ui</code> and <code>Y=Li,Ui,L,U</code> to permute
+        edge cubies.  Then use the sequence in step 2 with a setup to get the corners in place.  If they can't
+        be tri-cycled into place, go to step 4; otherwise, you're done.
+        </p>
+        <h3>Step 4</h3>
+        <p>
+        If you get into a state where two edges need to swap, no tri-cycle will work.  In this case,
+        I execute the sequence <code>R,Ui,Ri,U,R</code>.  This sets you back to step 2, but once done,
+        the solve will go through.
+        </p>
+	</body>
+</html>
