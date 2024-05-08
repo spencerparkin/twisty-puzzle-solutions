@@ -21,7 +21,7 @@
 		Similarly, I will use <code>P<sub>D</sub></code> and <code>P<sub>U</sub></code> to denote the equivilant idea with slices parallel to <code>D</code> and <code>U</code>, respectively.
 		</p>
 		<p>
-		I will use <code>T</code> to denote the entire middle slice parallel to <code>F</code> and <code>B</code>, but having the same orientation as <code>F</code>.
+		I will use <code>T</code> to denote the entire middle slice parallel to <code>F</code> and <code>B</code>, but having the same orientation as <code>F</code>.  Executing <code>T</code> means rotating 4 middle layers at the same time, not including <code>F</code> or <code>B</code>.
 		</p>
 		<p>
 		Lastly, the term "back tracking" is abused here a bit.  By this, I don't mean that you have to undo a bunch of moves to get back to a certain state, then go down a different path.  Rather, I mean that you have to go back to a previous step and start from there.
@@ -77,7 +77,7 @@
 		All that said, some algorithms can help reduce the extent of the back-tracking even further.  (There is a very lengthy algorithm someone has come up with for solving the parity problem altogether, but I can't remember it.)  What I do is execute <code>Y,2T,Y',2T,M<sub>L</sub>,|L|,Y'</code>, where <code>Y=M<sub>L</sub>',2U,M<sub>L</sub>,2U</code>.  What this does is simply take the unsolvable tri-cycle state of the edge pieces and put them in a solvable state.  Finish up with edge tri-cycling as usual, and you're done.
 		</p>
 		<p>
-		But we can do even better.  If we replace <code>|L|</code> with a different re-orientation of the entire cube before executing <code>Y'</code>, we can make it so that only 4 edge peices are out of place before the entire cube is solved.  Only 2 tri-cycles are required to position them, and they can be combined into a smaller sequence, such as <code>P<sub>D</sub>',X,P<sub>D</sub>,P<sub>U</sub>,X',P<sub>U</sub>'</code>.
+		But we can do even better.  If we replace <code>|L|</code> with a different re-orientation of the entire cube before executing <code>Y'</code>, (namely, <code>|2U|</code>), we can make it so that only 4 edge peices are out of place before the entire cube is solved.  Only 2 tri-cycles are required to position them, and they can be combined into a smaller sequence, such as <code>P<sub>D</sub>',X,P<sub>D</sub>,P<sub>U</sub>,X',P<sub>U</sub>'</code>.
 		</p>
 	</body>
 </html>
