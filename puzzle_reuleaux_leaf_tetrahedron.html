@@ -1,0 +1,130 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Reuleaux Leaf Tetrahedron</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Reuleaux Leaf Tetrahedron</h1>
+		<center><img src="images/leaf_tetrahedron.jpg"></center>
+		<p>
+		At first glance, this puzzle doesn't look like it's going to be very interesting at all,
+		but I was pleasantly surprised!  It's quite cleaver and has some interesting cases.
+		According to a website, it was invented by Yukang Wu, whoever that guy is.
+		</p>
+		<p>
+		With one side of the tetrahedron on a table and one side facing you, two sides face away
+		from you.  The left edge we'll denote with <code>L</code>, the right, <code>R</code>, and
+		the edge behind, <code>B</code>.  We will have no need to refer to the remaining 3 edges
+		resting on the table.  Of course, after re-orienting the puzzle, the edges <code>L</code>,
+		<code>R</code> and <code>B</code> reassign.  Every edge can turn 90 degrees, and the puzzle
+		does not bandage.  Though it's not immediately obvious, you can convince yourself that
+		the puzzle has a 3x3x3 core.
+		</p>
+		<p>
+		There are some fun parts to this puzzle.  You have the tiny face triangles which are dualed,
+		if you will, by an internal kind of spikey "face" piece that hides behind the leaf peices.  And then
+		there are, of course, the edge peices.  The internal "faces" or spikes are hidden when the
+		puzzle is in the solved state, and the tiny triangle face pieces can become hidden too.
+		The whole puzzle shape-shifts in really cool ways.
+		</p>
+		<p>
+		We will use <code>|U|</code> to denote a rotation of 120 degrees of the puzzle about
+		an axis that sticks up from the table and orthogonal to its surface.  Looking down at
+		the table from above, this is a clock-wise rotation.  Of course, <code>|U'|</code> would
+		denote a counter-clock-wise rotation of the puzzle.  Once the puzzle is rotated, the meaning
+		of <code>L</code>, <code>R</code> and <code>B</code> changes due to the new orientation.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Get the puzzle back into tetrahedral shape.
+		</p>
+		<h4>Step 1.A</h4>
+		<p>
+		Start rotating just the edge pieces so that they, regardless everything else, form the
+		edges of a tetrahedron.  Interestingly, if you don't pay attention to color at this step,
+		you can get the whole puzzle back into tetrahedral shape, but once you do, you won't be
+		able to finish the solve.  So make sure the edges are oriented properly with respect to
+		one another, with regard to both shape and color.
+		</p>
+		<h4>Step 1.B</h4>
+		<p>
+		Use <code>X=R',L,R,L'</code> to swap the pair of faces pieces, one right in front of you,
+		the other inside the top vertex.  Either face piece could be a tiny triangle or an internal
+		spikey "face" piece.  You want to involve both kinds in the swap, because your goal is to move
+		all the kinds of face pieces around so that they're in their proper places relative to the
+		edges.  The internal spikey "face" pieces should be at the vertices of the tetrahedron, while
+		the tiny triangle face pieces should be in the center of the faces of the tetrahedron.
+		</p>
+		<p>
+		A tricky case can happen where a said swap solve one pair, but then unsolves another.  You may
+		have to move some stuff out of the way, do the swap, and then restore.
+		</p>
+		<p>
+		Note that an interesting case occurs near the end of the solve that is due to an ambiguity
+		in this step, which is simply that it is not clear which internal spikey "faces" should be at
+		which vertices.  Swapping pairs of such "faces" creates or destroys a parity error at the
+		last step of the solve.  (This is the classic "it can't be solved by tri-cycles" problem, because
+		a swap is needed.)  Anyhow, just be aware of that.  There's no obvious way I know of as for
+		how to account for it now.  If you encounter the parity error near the end of the solve, just backtrack.
+		</p>
+		<h4>Step 1.C</h4>
+		<p>
+		Once all faces are positioned, use <code>2X</code> to flatten the pedals.
+		This move will flatten a pedal in the front face at top/center, and a pedal in
+		the back/left face at top/center as well.  Don't worry about preserving the edge
+		orientations at this stage, provided you move them in multiples of 180 degrees, not 90.
+		You can also use <code>2X'</code> to flatten similarly with pedals in the front and back/right
+		faces.  Your choice of 180 degree turns of all the edges prepare you for applications of
+		<code>2X</code> or <code>2X'</code> to get all the pedals flattened.
+		</p>
+		<p>
+		Once this step is complete, the puzzle is back in tetrahedral shape.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		Get all faces of the tetrahedron to be one color.
+		</p>
+		<h4>Step 2.A</h4>
+		<p>
+		Restore the proper edge orientations, respecting colors of the edges.
+		In other words, just resolve the edges.  Super quick and easy.
+		</p>
+		<h4>Step 2.B</h4>
+		<p>
+		Move the pedals into position, using setups as needed.  I use two sequences for this.
+		</p>
+		<p>
+		The first is <code>2X,|U'|,2X</code>, which rotates the 3 pedals covering
+		the internal spikey "face" for the top vertex of the tetrehadon (as it rests on a table.)
+		The pedals rotate clock-wise when viewing the vertex from above.  Of course, this is
+		a tri-cycle.
+		</p>
+		<p>
+		The second is the trivial tri-cycle <code>2[L,R]</code>.  It's easy to see exactly
+		which 3 pidals this tri-cycles/rotates.
+		</p>
+		<p>
+		Of course, it's also good to know how to peform these tri-cycles in the opposite
+		directions, and of course, it's just the inverses <code>2X',|U|,2X'</code> and
+		<code>2[R,L]</code>.
+		</p>
+		<p>
+		You'll find that you may need to use one of these as a setup move for the other.
+		Some setups need to be a bit more elaborate to get all the pudals solved.
+		</p>
+		<h4>Step 2.C</h4>
+		<p>
+		Lastly, solve the tiny triangle face pieces.  A tri-cycle for them is
+		<code>2[L,R],B,(2[L,R])',B'</code>.  Memorizing the inverse is helpful too.
+		</p>
+		<p>
+		As was said earlier, you can run into a problem here where the puzzle doesn't solve,
+		because the remaining unsolved faces are a pair, which, of course, can't be tri-cycled
+		into position.  This is the afformentioned pairty error.  The only solution I have
+		is to go back to step 1.B after first swapping a pair of internal spikey "faces".
+		That seems like a big backtrack, but because the puzzle is mostly solved at this point,
+		it doesn't actually mess much up, and you get back to this step pretty quickly, at which
+		point, it will solve with tri-cycles.
+		</p>
+	</body>
+</html>
