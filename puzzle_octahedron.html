@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Octahedron</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Octahedron</h1>
+		<center><img src="images/octahedron.jpg"></img></center>
+		<p>
+		I enjoyed this one.  It's like the octahdron version of a Rubik's cube, but there are no center face pieces.
+		</p>
+		<p>
+		For the purposes of solving this puzzle, we'll only need to label half the faces as follows.
+		</p>
+		<center><img src="images/octahedron_labeled.jpg"></img></center>
+		<p>
+		There are 3 classes of pieces in this puzzle: corners, edges and faces.  The corners can be positioned and oriented
+		incorrectly.  The edges can be positioned incorrectly, but once positioned correctly, the orientation is always correct.
+		And, of course, faces can be positioned incorrectly, but orientation does not matter.
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		I like to solve corners first.  Solve 3 of them in a single face.  The opposite face (let's say it's the <code>D</code> face)
+		will then have the remaining three corners, and you can use <code>X=A,Ci,Ai,C</code> until they're all oriented properly, then
+		just use <code>D</code> until they're positioned properly.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		Next, solve the edges.  All that's needed is to get them into position.  I like to use a process similar to the
+		key-hole method on the 3x3x3 Rubik's Cube to get all edges solved on opposite faces.  Once that's done, rotate the
+		middle slice between those opposite faces until the remaining edges are as solved as possible.  Then use a tri-cycle
+		similar to <code>4[A,Bi,Ai,B]</code> to permute edges without distrubing the corners.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		All that remains is to position the face pieces.  For this, there is a 5-cycle that can be useful by itself.
+		It is <code>Y=X,!D,X,!Di</code>.  (Note that the <code>!</code> notation changes your perspective mid-sequence,
+		which affects the meaning of subsequent rotations.  See the index page for info on notation.)
+		A piece of tape stuck to a face can help you discover the 5-cycle by looking at the orbit of the tape.
+		Anyhow, a tri-cycle can be built from this, and it is <code>Y,B,Yi,Bi</code>.  Admittedly, your brain has
+		to go into a bit of a pretzil to figure out what <code>Yi</code> means, but once you figure it out, it's not hard.
+		The face pieces tri-cycled by this are illustrated as follows.
+		</p>
+		<center><img src="images/octahedron_tri_cycle.jpg"></img></center>
+		<p>
+		Combining this tri-cycle with setups will get the puzzle into a solved state.  I say, "a solved state", of course, rather
+		than "the solved state", because I'm sure that face pieces of the same color could change position from how the puzzle
+		came to you in the mail.  There is a group-theory term for this that I used to remember, but it has long since fled my
+		decaying brain.  Okay, I think it might be the distinction between isomorphism and homomorphism...?  I can't remember.
+		I think that all of the solved state possibilities form a factor group or something like that, of which you can "mod-out" by.
+		</p>
+	</body>
+</html>
