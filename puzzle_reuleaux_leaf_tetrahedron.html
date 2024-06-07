@@ -56,7 +56,7 @@
 		the tiny triangle face pieces should be in the center of the faces of the tetrahedron.
 		</p>
 		<p>
-		A tricky case can happen where a said swap solve one pair, but then unsolves another.  You may
+		A tricky case can happen where a said swap solves one pair, but then unsolves another.  You may
 		have to move some stuff out of the way, do the swap, and then restore.
 		</p>
 		<p>
@@ -65,7 +65,8 @@
 		which vertices.  Swapping pairs of such "faces" creates or destroys a parity error at the
 		last step of the solve.  (This is the classic "it can't be solved by tri-cycles" problem, because
 		a swap is needed.)  Anyhow, just be aware of that.  There's no obvious way I know of as for
-		how to account for it now.  If you encounter the parity error near the end of the solve, just backtrack.
+		how to account for it at this step.  If you encounter the parity error near the end of the solve,
+		then, interestingly, a backtrack won't be needed, as is often the case with other puzzles.
 		</p>
 		<h4>Step 1.C</h4>
 		<p>
@@ -120,11 +121,9 @@
 		<p>
 		As was said earlier, you can run into a problem here where the puzzle doesn't solve,
 		because the remaining unsolved faces are a pair, which, of course, can't be tri-cycled
-		into position.  This is the afformentioned pairty error.  The only solution I have
-		is to go back to step 1.B after first swapping a pair of internal spikey "faces".
-		That seems like a big backtrack, but because the puzzle is mostly solved at this point,
-		it doesn't actually mess much up, and you get back to this step pretty quickly, at which
-		point, it will solve with tri-cycles.
+		into position.  This is the afformentioned pairty error.  To solve it, just use
+		<code>3X</code> three times to swap a pair of internal spikey "faces".  Now you can
+		tri-cycle the remaining unsolved tiny triangle faces using tri-cycles.
 		</p>
 	</body>
 </html>
