@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Hollow Skewb</title>
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Hollow Skewb</h1>
+		<p>
+		This Skewb has quickly become, in my mind, a classic twisty puzzle, deserving as much attention as the Rubik's Cube.  It's just a good puzzle every cuber (or dodecahedroner) should have.
+		</p>
+        <p>
+        As far as solving goes, there's no difference between a regular skewb and a hollow skewb.
+        The hollow one just looks cooler.
+        </p>
+        <p>
+        There are two perspectives used in the solve.  They are as follows.
+        </p>
+        <center><img src="images/skewb_four_axis_perspective.jpg"/><img src="images/skewb_three_axis_perspective.jpg"/></center>
+        <p>
+        For the second of these, I'll let <code>x</code> denote an axis parallel to that used by <code>X</code>, but
+        in the opposite direction.  Since any rotation of the puzzle rotates half the puzzle, this means that the net
+        effect of <code>x</code> is the same as <code>X'</code>, and the same goes with <code>x'</code> versus <code>X</code>.
+        Using the notation given on the home-page, we would say that <code>x=!X</code>, but I'm using lower-case letters
+		here for convenience.
+        </p>
+        <p>
+        Also, I'm going to let <code>W</code> denote an axis pointing straight at you in both perspectives shown above.
+        </p>
+        <h2>Solving</h2>
+        <h3>Step 1</h3>
+        <p>
+        Permute the large pieces into position.  A single rotation of any face is an obvious tri-cycle of
+        3 large pieces in a triangular pattern.  To tri-cycle 3 of them in a row (or column), use <code>C',B,C</code>.
+        </p>
+        <h3>Step 2</h3>
+        <p>
+        Permute the small pieces into position.  Clearly, <code>W</code> will tri-cycle 3 small pieces, but at the expense
+        of also doing that to 3 large pieces.  To compensate, use <code>W,4[x',z,x,z']</code>.  This performs the same tri-cycle
+        of the same small pieces, but preserves the position of the large pieces.  Note that alot of flipping of orientation
+        occurs here, making it a bit tricky to see that it works.  Performing this sequence on a solved skewb makes it easier
+        to see that it works.
+        </p>
+        <p>
+        Note that another small piece permutor is <code>R=3[X,Y',X',Y]</code>, which does a pair of swaps, which is sometimes useful
+        on its own, but I mainly use it to re-orient small peices, as shown in Step 4.
+        </p>
+        <h3>Step 3</h3>
+        <p>
+        Orient large pieces.  The sequence <code>2[2Q,|W|]</code> will perform a pair of large piece flips, where <code>Q=B,C',B',C</code>.
+        The pieces flipped are those on the top and bottom of the puzzle.  Use setups, of course, to get what pair of peices you want flipped
+        to flip.
+        </p>
+        <h3>Step 4</h3>
+        <p>
+        Orient small peices.  Use <code>R,z,R',z'</code> to rotate a pair of small pieces one way, or <code>R,z',R',z</code> to
+        rotate them the other way.
+        </p>
+        <h3>Extra Notes</h3>
+        <p>
+        The solve above is the classic steps in every twisty-puzzle solve: position all piece types, then orient all piece types.
+        But in practice, this isn't really feasible on
+        the skewb, because the mis-oriented peices make it very hard to tell if they're in the right position or not.  Therefore, what I really
+        do as a first step is try to get a single face of the dodecahedron solved, then maybe another, then go from there with the usual steps.
+        Getting a single face (or two adjacent faces) solved can be done intuitively while most of the puzzle is scrambled anyway.
+        </p>
+        <p>
+        Small digression: I can't imagine orienting and then positioning, but I suppose that's conceivable.  The problem with this order
+        is that changing the position of a piece often changes its orientation as well.  (In fact, orientation may be measured relative to
+        a piece's position on the puzzle.)  But changing orientation always preserves position.
+        </p>
+    </body>
+</html>
