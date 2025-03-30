@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>Twisty Puzzle Solutions: Master Skewb</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<center><img src="images/master_skewb.jpg"/></center>
+		<h1>Master Skewb</h1>
+		<p>
+		This was a fun puzzle, because it gave me some trouble.  It's a generalization of
+		the skewb.  I don't have the Skewb documented, because the solution was revealed to
+		me, and I'm only trying to take notes on solutions I've found myself.
+		</p>
+		<p>
+		For a long time I didn't touch this puzzle, because it turned so poorly that it
+		wasn't fun to play with at all.  But I would turn it occasionaly and over time, I
+		think it loosened up enough that I was willing to start analyzing it.
+		</p>
+		<p>
+		For my solve, we label the cube as follows.
+		</p>
+		<center><img src="images/master_skewb_labeled.jpg"/></center>
+		<p>
+		Here, 7 of the 8 corners of the cube are labeled.  The remaining corner on the other side of the cube will be denoted <code>H</code>.  The <code>Z</code> and <code>W</code> axes represent middle slices and when rotating clock-wise, go in the direction indicated by the arrows.
+		</p>
+		<p>
+		There are 4 classifications of pieces on this puzzle: corners, edges, centers and off-centers.  There are 6 center pieces (1 per face) and 24 off-center pieces (4 per face.)
+		</p>
+		<h3>Step 1</h3>
+		<p>
+		Solve the corners and centers as you would a regular Skewb.
+		</p>
+		<h3>Step 2</h3>
+		<p>
+		Solve the off-center pieces.  I used <code>Q,H,Q',H'</code> where <code>Q=Y,Z',Y'</code> and <code>Y=A,Z,D</code>.  It took a lot of effort to figure this one out, and maybe there's a better sequence, but in any case, the net effect of this sequence is shown in the following pictures.  The sequence was applied to a solved cube, so it's easy to see where pieces went and which were preserved.
+		</p>
+		<center><img src="images/master_skewb_tri_cycle_front.jpg"/><img src="images/master_skewb_tri_cycle_back.jpg"/></center>
+		<p>
+		The first of these pictures was taken from the perspective at which the sequence was executed.  The second rotates the cube around 180 degrees.  Note that the sequence did not change the face that is in contact with the table.
+		</p>
+		<p>
+		As you can see, the sequence does a pair of tri-cycles: one that tri-cycles off-center faces, and one that tri-cycles edges.  Use this sequence, in conjunction with setups, to get all off-centers pieces into position.
+		</p>
+		<h3>Step 3</h3>
+		<p>
+		Lastly, solve the edges.  I used <code>T,D,T',D'</code> with <code>T=Z,W,Z',W'</code>.  This tri-cycles 3 edges in the top of the cube, and its inverse is easy to remember.  I don't think that the orientation of the edges is ever a problem.  You just need to get them into position.
+		</p>
+		<p>
+		It strikes me as interesting that this final sequence is simpler than the one presented in Step 2.  Usually the opposite is true.  That is, sequences that are more targeted (permute less of the cube and preserve more of it) are more complex than sequences that permute more and preserve less.
+		</p>
+	</body>
+</html>
