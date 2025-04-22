@@ -7,12 +7,8 @@
 		<center><img src="images/ButterFlowerCube.jpg"></center>
 		<h1>The Butter Flower Cube</h1>
 		<p>
-		As of this writing, I've only solved this once, but I'm going to do a write-up of it anyway.  It's a fun puzzle.
-		I'm surprised at how both easy and hard it was.  Easy, because it didn't take long at all to find the necessary
-		sequences, but also a bit hard, because the setups needed in the final step are difficult (but sometimes they get
-		easier with practice.)  Anyhow, I wasn't able to always make reductions in the final step.  Rather, sometimes I had
-		to turn one problem into another, or even back-track a bit.  Again, with practice, maybe the need for such things
-		will no longer occur.
+		This is a fun puzzle that contains all the moves available on the curvy-copter.  I forget which.
+		In any case, interestingly, I don't reduce it to a curvy-copter as you'll see in the steps below.
 		</p>
 		<p>
 		There are 3 types of faces: large pedal, small pedal, and diamond.  (Should be reasonably clear which I mean here.)  And there
@@ -24,25 +20,20 @@
 		</p>
 		<h3>Step 2</h3>
 		<p>
-		Solve the edges next.  There is a trivial tri-cycle for this.  It's a commutator between and edge and corner.
+		Solve the edges next.  There is a trivial tri-cycle for this.  It's a commutator between an edge and corner.
+		If the edges won't solve, turn a single corner once, and then continue tri-cycling.
 		</p>
 		<h3>Step 3</h3>
 		<p>
-		Solve the large pedals.  This is a trivial tri-cycle (or commutator) between adjacent edges.  Use corner turns as setups.
+		Solve the large pedals.  This is a trivial tri-cycle (or commutator) between adjacent edges.  Use corner and edge turns as setups.
 		</p>
 		<h3>Step 4</h3>
 		<p>
-		Solve the small pedals.  This is the trickiest part.  My stratagy was to perform the tri-cycle in <code>Step 3</code>,
-		but with a setup ensure that all 3 large pedals involved are the same color.  This will tri-cycle 3 small pedals while
+		Solve the small pedals.  This is the trickiest part.  My stratagy was to perform the tri-cycle in <b>Step 3</b>,
+		but with a trivial setup to ensure that all 3 large pedals involved are the <i>same</i> color.  This will tri-cycle 3 small pedals while
 		leaving the rest of the cube invarient.  You then have to find setups for this stratagy to tri-cycle the desired triples
 		of small pedals.  Where it gets tricky is in realizing that sometimes you have to change orbits in the setup sequence.
 		Doing so requires a special move only available on the curvy-copter, which is a sub-group (or factor group?) of this cube.
-		</p>
-		<p>
-		I suppose there might be a solve method where you first reduce the dube to a curvy-copter, and then solve as a curvy-copter.
-		I'll have to give that a try.  My guess is that once reduced to a curvy-copter, you might encounter cases that can't happen
-		on a normal curvy-copter.  This classic example, of course, is the 4x4 Rubic's Cube.  Once reduced to a 3x3, it's not necessarily
-		a true 3x3, because you may encounter cases that can't happen on a normal 3x3, such as having a single edge flipped.
 		</p>
 	</body>
 </html>
